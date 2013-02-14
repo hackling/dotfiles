@@ -44,13 +44,3 @@ eval "$(rbenv init - --no-rehash)"
 export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
 export EDITOR=/usr/local/bin/vim
 unsetopt correct_all
-alias tip="cat ~/.tips | grep"
-alias v="vim ."
-alias tipedit="vim ~/.tips"
-alias rmfolder="rm -rf"
-alias work="cd ~/work"
-alias whatalias=" alias | grep"
-alias vt="cat ~/.vimtips | grep"
-alias xx="exit"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="vim ~/.zshrc"
