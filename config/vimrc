@@ -14,6 +14,10 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ervandew/supertab'
 "CTRL-P File Finder
 Bundle 'kien/ctrlp.vim'
+"CTRL-P Modified
+Bundle 'jasoncodes/ctrlp-modified.vim'
+"Ack
+Bundle 'mileszs/ack.vim'
 "Git Blame
 Bundle 'tpope/vim-fugitive'
 "Buff Explorer
@@ -28,9 +32,11 @@ Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'Valloric/YouCompleteMe'
 "Colour Tables
 Bundle 'guns/xterm-color-table.vim'
+"Powerline-Vim
+Bundle 'Lokaltog/vim-powerline'
+
+
 filetype plugin indent on     " required!
-"Jellybeans
-Bundle 'nanotech/jellybeans.vim'
 syntax enable
 set background=dark
 colorscheme solarized
@@ -141,7 +147,7 @@ hi CursorLineNr term=bold ctermfg=225 ctermbg=88 guifg=#ccc5c4
 set cursorline
 
 "Highlighting on table completion
-hi Pmenu ctermbg=22 gui=bold
+hi Pmenu ctermbg=232 ctermfg=255 gui=bold
 
 "Quick Fix Signs
 let g:quickfixsigns_classes = ['vcsdiff']
@@ -157,4 +163,27 @@ let g:ctrlp_custom_ignore         = {
   \ 'link': '',
   \ }
 
-hi Search cterm=underline ctermfg=5
+hi Search cterm=underline ctermfg=201
+
+"Powerline Settings
+
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+"CtrlP-modified Settings
+map <Leader>T :CtrlPClearAllCaches<CR>:CtrlP<CR>
+map <Leader>l :CtrlPBuffer<CR>
+map <Leader>m :CtrlPModified<CR>
+" map <Leader>d :CtrlPCurFile<CR>
+
+"Ack keyword
+nnoremap <Leader>H *<C-O>:AckFromSearch!<CR>
+nmap <Leader>f :Ack!<Space>
+nmap <Leader>F :AckFromSearch!<CR>
+
+" Persistent Undo
+set undodir=$HOME/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
