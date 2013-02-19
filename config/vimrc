@@ -34,13 +34,28 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'guns/xterm-color-table.vim'
 "Powerline-Vim
 Bundle 'Lokaltog/vim-powerline'
+"Up and Down - Bubble Lines
+Bundle 'vim-scripts/upAndDown'
+"Ennova Colourscheme of choice
+Bundle 'nanotech/jellybeans.vim'
+"Allows opening of spec files
+Bundle 'tpope/vim-rails'
+"Syntax checker
+Bundle 'scrooloose/syntastic'
+"Autocompleter
+Bundle 'Shougo/neocomplcache'
 
+" Use option-J/K to bubble lines up and down
+map <silent> ˚ <Plug>upAndDownUp
+nmap <silent> ∆ <Plug>upAndDownDown
+vmap <silent> ˚ <Plug>upAndDownVisualUp
+vmap <silent> ∆ <Plug>upAndDownVisualDown
+imap <silent> ˚ <Plug>upAndDownInsertUp
+imap <silent> ∆ <Plug>upAndDownInsertDown
 
 filetype plugin indent on     " required!
 syntax enable
 set background=dark
-colorscheme solarized
-"colorscheme jellybeans
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -48,22 +63,29 @@ set expandtab
 set number
 set hidden
 set noswapfile
-let g:indent_guides_enable_on_vim_startup=1
-let mapleader = ","
 set incsearch " Find the next match as we type the search
 set hlsearch " Highlight searches by default
 set scrolloff=8 "Set point where the file scrolls
 set ignorecase
+set nowrap
+
+" colorscheme solarized
+colorscheme jellybeans
+
+let mapleader = ","
+let g:indent_guides_enable_on_vim_startup=1
+let g:syntastic_enable_signs=0
 
 " Nerd Tree mapppings
 " NERDTree
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>. :NERDTreeFind<CR>
-" Indent Guide Settings
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let g:indent_guides_guide_size = 1
+
+" " Indent Guide Settings
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+" let g:indent_guides_guide_size = 1
 
 " NERDTree
 let g:NERDTreeShowLineNumbers = 0
@@ -147,7 +169,7 @@ hi CursorLineNr term=bold ctermfg=225 ctermbg=88 guifg=#ccc5c4
 set cursorline
 
 "Highlighting on table completion
-hi Pmenu ctermbg=232 ctermfg=255 gui=bold
+"hi Pmenu ctermbg=232 ctermfg=255 gui=bold
 
 "Quick Fix Signs
 let g:quickfixsigns_classes = ['vcsdiff']
@@ -198,3 +220,15 @@ set foldminlines=0
 " Space to toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
+
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['ruby', 'php'],
+                           \ 'passive_filetypes': [] }
+
+" Neocomplcache
+let g:acp_enableAtStartup = 0                        " Disable AutoComplPop
+let g:neocomplcache_enable_at_startup = 1            " Use neocomplcache
+let g:neocomplcache_enable_smart_case = 1            " Use smartcase
+let g:neocomplcache_enable_camel_case_completion = 1 " Use camel case completion
+let g:neocomplcache_enable_underbar_completion = 1   " Use underbar completion
+let g:neocomplcache_auto_completion_start_length = 3
