@@ -26,10 +26,10 @@ Bundle 'bufexplorer.zip'
 Bundle 'trailing-whitespace'
 "Easy Commenting
 Bundle 'tomtom/tcomment_vim'
-"Quick Fix Signs
-Bundle 'tomtom/quickfixsigns_vim'
-"Youcompleteme
-Bundle 'Valloric/YouCompleteMe'
+" "Quick Fix Signs
+" Bundle 'tomtom/quickfixsigns_vim'
+" "Youcompleteme
+" Bundle 'Valloric/YouCompleteMe'
 "Colour Tables
 Bundle 'guns/xterm-color-table.vim'
 "Powerline-Vim
@@ -38,12 +38,20 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/upAndDown'
 "Ennova Colourscheme of choice
 Bundle 'nanotech/jellybeans.vim'
+"Another Colorscheme
+Bundle 'tpope/vim-vividchalk'
 "Allows opening of spec files
 Bundle 'tpope/vim-rails'
 "Syntax checker
 Bundle 'scrooloose/syntastic'
 "Autocompleter
 Bundle 'Shougo/neocomplcache'
+"Change surrounds
+Bundle 'tpope/vim-surround'
+"ColorSchemes Galore
+Bundle 'flazz/vim-colorschemes'
+"Git signs
+Bundle 'airblade/vim-gitgutter'
 
 " Use option-J/K to bubble lines up and down
 map <silent> ˚ <Plug>upAndDownUp
