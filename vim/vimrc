@@ -61,40 +61,12 @@ map <Leader>a ggVG
 nnoremap j gj
 nnoremap k gk
 
-" Easy window navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
-" Reselect visual block after indent
-vnoremap < <gv
-vnoremap > >gv
-
-" Highlight word at cursor without changing position
-nnoremap <Leader>h *<C-O>
-
 " Jump to start and end of line using the home row keys
 noremap H ^
 noremap L $
 
-" Clear search
-noremap <silent><Leader>/ :nohls<CR>
-
-" Yank and put system pasteboard with <Leader>y/p
-noremap <Leader>y "*y
-nnoremap <Leader>yy "*yy
-noremap <Leader>p "*p
-noremap <Leader>P "*P
-
-
-"Highlight the current line you are on.
-hi CursorLineNr term=bold ctermfg=225 ctermbg=88 guifg=#ccc5c4
-set cursorline
-
 "Highlighting on table completion
 "hi Pmenu ctermbg=232 ctermfg=255 gui=bold
-
 
 hi Search cterm=underline ctermfg=201
 
@@ -103,8 +75,6 @@ hi Search cterm=underline ctermfg=201
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
-
-
 
 " Persistent Undo
 set undodir=$HOME/.vim/undodir
