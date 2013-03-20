@@ -16,7 +16,7 @@ function put_spacing() {
   local spacing="-"
   local output=""
   for i in {1..$termwidth}; do
-    output="${output}${spacing}" 
+    output="${output}${spacing}"
   done
   echo "${output}"
 }
@@ -30,11 +30,11 @@ local p_time="%{$PR_BOLD%}%D{%L:%M%p}"
 
 
 PROMPT="
-$fg[cyan]╭─ $fg[green]${p_time} $fg[cyan]- $fg[yellow]${current_dir}$fg[cyan] ${spacing}$fg[cyan]---${git}$fg[cyan]---◇
-╰─→ $reset_color"
+%{${fg[cyan]}%}╭─ %{${fg[green]}%}${p_time} %{${fg[cyan]}%}- %{${fg[yellow]}%}${current_dir}%{${fg[cyan]}%} ${spacing}%{${fg[cyan]}%}---${git}%{${fg[cyan]}%}---◇
+╰─→ %{${reset_color}%}"
 RPS1="${return_code}"
 
-ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red][+"
-ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]["
+ZSH_THEME_GIT_PROMPT_DIRTY="%{${fg[red]}%}[+"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{${fg[green]}%}["
 ZSH_THEME_GIT_PROMPT_PREFIX="git:"
-ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
+ZSH_THEME_GIT_PROMPT_SUFFIX="]%}$reset_color"

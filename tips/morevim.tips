@@ -4,11 +4,7 @@ va[brace]         - select braces and everything in them                    - vi
 vi[brace]         - select everything inside braces                         - vim
 ![shell command]  - execute a shell command in vim                          - vim
 %                 - current file for shell command in vim                   - vim
-chmod +rwx        - set write permission                                    - shell
-ps -ax            - look up currently running processes                     - shell
 <Leader> be       - open bufexplorer for swapping between buffers           - vim
-git log -p [file] - open git log on a particular file                       - git
-ack [search word] - grep on steroids, looks inside files                    - ack
 "*y               - copy from vim to system clipboard                       - vim
 [line#] shift g   - go to line number                                       - vim
 shift j           - concatinate line with the line above                    - vim
@@ -17,7 +13,6 @@ ctrl 6            - change between current and previous buffer              - vi
 ctrl v            - column select in vim                                    - vim
 crtl v, I         - insert mode at beginning of selected lines              - vim
 <Leader> sd       - trim all trailing whitespace                            - vim
-rm -rf *          - delete/remove directory and all files within            - shell
 :s/*/*/g          - search and replace selected lines                       - vim
 \*\               - find within document                                    - vim
 :s//*             - use last find in search and replace                     - vim

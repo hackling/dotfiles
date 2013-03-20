@@ -1,0 +1,5 @@
+rm -rf *          - delete/remove directory and all files within            - shell
+git log -p [file] - open git log on a particular file                       - git
+ack [search word] - grep on steroids, looks inside files                    - ack
+chmod +rwx        - set write permission                                    - shell
+ps -ax            - look up currently running processes                     - shell

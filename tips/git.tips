@@ -1,0 +1,2 @@
+git flow feature start [branch-name]
+git push -u [origin] feature/[branch-name]

@@ -1,0 +1,1 @@
+pg_restore --no-acl --no-owner -d envision_development ~/Desktop/e7-thiess.dump
