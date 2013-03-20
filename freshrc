@@ -1,0 +1,32 @@
+# freshshell.com
+#
+# Examples:
+#
+#   fresh twe4ked/dotfiles shell/functions.sh
+#   fresh jasoncodes/dotfiles aliases/rails.sh
+#   fresh jasoncodes/dotfiles config/tmux.conf --file
+#
+# See http://freshshell.com/readme for documentation.
+
+fresh vim/vimrc --file
+fresh 'vim/config/*.vim' --file=~/.vimrc --marker=\"
+fresh 'vim/keybindings/*.vim' --file=~/.vimrc --marker=\"
+fresh 'vim/plugins/*.vim' --file=~/.vimrc --marker=\"
+
+fresh config/zshrc --file
+fresh config/aliases.sh
+fresh config/hackling.zsh-theme --file=~/.oh-my-zsh/themes/hackling-redux.zsh-theme
+
+fresh freshshell/fresh bin/fresh --bin
+fresh jasoncodes/dotfiles aliases/git.sh
+fresh jasoncodes/dotfiles config/gitconfig --file
+fresh jasoncodes/dotfiles config/gitignore --file
+fresh jasoncodes/dotfiles aliases/rbenv.sh
+fresh jasoncodes/dotfiles aliases/rails.sh
+fresh jasoncodes/dotfiles config/ackrc --file
+fresh jasoncodes/dotfiles aliases/ruby.sh
+fresh jasoncodes/dotfiles config/pryrc --file
+fresh jasoncodes/dotfiles config/tmux.conf --file
+fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
+fresh twe4ked/dotfiles bin/heroku-remote-add --bin
+fresh pengwynn/dotfiles bin/gxpr --bin
