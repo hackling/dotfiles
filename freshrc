@@ -39,3 +39,5 @@ fresh pengwynn/dotfiles bin/gxpr --bin
 fresh jasoncodes/dotfiles bin/airport-bounce --bin
 fresh jasoncodes/dotfiles bin/adduser --bin
 fresh jasoncodes/dotfiles bin/wemux/\* --bin
+fresh twe4ked/dotfiles bin/fresh-convert --bin
+fresh jasoncodes/dotfiles bin/loop --bin
