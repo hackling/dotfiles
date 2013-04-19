@@ -6,7 +6,5 @@ alias xx="exit"
 alias zshrc="vim ~/.dotfiles/config/zshrc"
 alias dotfiles="~/.dotfiles/"
 alias gsw="git show"
-alias migrations="rake db:migrate && rake db:test:prepare"
-alias loaddump='pg_restore --no-acl --no-owner -d envision_development'
 alias editalias='vim ~/.dotfiles/config/aliases.sh'
 alias vimkeys='~/.dotfiles/vim/keybindings'

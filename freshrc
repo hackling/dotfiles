@@ -17,7 +17,9 @@ fresh-options --file=~/.vimrc --marker=\"
 fresh-options
 
 fresh config/zshrc --file
+fresh sharat87/zsh-vim-mode zsh-vim-mode.plugin.zsh
 fresh config/aliases.sh
+fresh config/db-aliases.sh
 fresh config/hackling.zsh-theme --file=~/.oh-my-zsh/themes/hackling-redux.zsh-theme
 
 fresh tips --file=~/tips/
