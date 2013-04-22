@@ -14,6 +14,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh 'vim/keybindings/*.vim'
   fresh 'vim/plugins/*.vim'
   fresh jasoncodes/dotfiles vim/config/tags.vim
+  fresh jasoncodes/dotfiles vim/config/format.vim
 fresh-options
 
 fresh config/zshrc --file

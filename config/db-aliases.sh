@@ -11,5 +11,6 @@ dlm() {
   rake db:create &&
   loaddump "$1" &&
   rake db:migrate &&
-  rake db:test:prepare
+  rake db:test:prepare &&
+  rake db:obfuscate:all
 }
