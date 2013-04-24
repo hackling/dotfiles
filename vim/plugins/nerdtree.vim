@@ -2,8 +2,8 @@
 Bundle 'scrooloose/nerdtree'
 
 " Nerd Tree mapppings
-noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>. :NERDTreeFind<CR>
+noremap <Leader>. :NERDTreeToggle<CR>
+noremap <Leader>n :NERDTreeFind<CR>
 
 let g:NERDTreeShowLineNumbers = 0
 let g:NERDTreeHijackNetrw     = 0
