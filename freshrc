@@ -44,3 +44,4 @@ fresh jasoncodes/dotfiles bin/adduser --bin
 fresh jasoncodes/dotfiles bin/wemux/\* --bin
 fresh twe4ked/dotfiles bin/fresh-convert --bin
 fresh jasoncodes/dotfiles bin/loop --bin
+fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#
