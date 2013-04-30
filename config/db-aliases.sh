@@ -1,6 +1,6 @@
 alias migrations="rake db:migrate && rake db:test:prepare"
 alias loaddump='pg_restore --no-acl --no-owner -d envision_development'
-alias dropandload='rake db:drop && rake db:create && loaddump'
+alias dropandload='rake db:drop && rake db:create && loaddump && rake db:obfuscate:all'
 
 dlm() {
   if [[ $# -ne 1 ]] || [[ -z "$1" ]]; then
