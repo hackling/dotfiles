@@ -37,6 +37,7 @@ fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh jasoncodes/dotfiles config/tmux.conf --file
 fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
+fresh zsh/zsh-history-complete-binding.zsh
 fresh twe4ked/dotfiles bin/heroku-remote-add --bin
 fresh pengwynn/dotfiles bin/gxpr --bin
 fresh jasoncodes/dotfiles bin/airport-bounce --bin
