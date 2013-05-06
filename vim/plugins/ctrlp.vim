@@ -18,4 +18,4 @@ let g:ctrlp_custom_ignore         = {
 map <Leader>T :CtrlPClearAllCaches<CR>:CtrlP<CR>
 map <Leader>l :CtrlPBuffer<CR>
 map <Leader>m :CtrlPModified<CR>
-" map <Leader>d :CtrlPCurFile<CR>
+map <Leader>d :CtrlPCurFile<CR>
