@@ -16,6 +16,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh 'vim/plugins/*.vim'
   fresh jasoncodes/dotfiles vim/config/tags.vim
   fresh jasoncodes/dotfiles vim/config/format.vim
+  fresh jasoncodes/dotfiles vim/config/search.vim
 fresh-options
 
 # Zsh
