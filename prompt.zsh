@@ -2,7 +2,7 @@
 setopt prompt_subst
 
 autoload colors; colors;
-autoload vcs_info
+autoload -Uz vcs_info
 
 # only show user and hostname when connected as root user or via ssh
 user_hostname() {
@@ -16,9 +16,9 @@ prompt_color() {
     echo "red"
   else
     if [ -n "$SSH_TTY" ]; then
-      echo "blue"
+      echo "green"
     else
-      echo "cyan"
+      echo "yellow"
     fi
   fi
 }
@@ -62,28 +62,32 @@ function prompt_pwd() {
 }
 
 local git_formats="%{${fg[yellow]}%}± %b%c%u%{${reset_color}%}"
-zstyle ':vcs_info:git*' enable git
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' get-revision true
-zstyle ':vcs_info:git*' stagedstr "+"
-zstyle ':vcs_info:git*' unstagedstr "*"
-zstyle ':vcs_info:git*' formats "$git_formats"
-zstyle ':vcs_info:git*' actionformats "%a $git_formats"
+zstyle ':vcs_info:*' stagedstr '%F{28}●'
+zstyle ':vcs_info:*' unstagedstr '%F{11}●'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+zstyle ':vcs_info:*' enable git svn
 
-precmd() {
-  vcs_info
+precmd () {
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats ' %c%u %F{magenta}%b'
+    } else {
+        zstyle ':vcs_info:*' formats ' %c%u%F{red}● %F{magenta}%b'
+    }
+    vcs_info
 }
 
 local cwd='%{${fg[green]}%}$(prompt_pwd)%{${reset_color}%}'
 local usr='%{${fg[yellow]}%}$(user_hostname)%{${reset_color}%} '
 local char='%{${fg[$(prompt_color)]}%}»%{${reset_color}%} '
-local git='${vcs_info_msg_0_} '
-local timestamp='%* '
+local git=' ${vcs_info_msg_0_} '
+local timestamp='%F{yellow}%* '
 local vi_mode='$(which vi_mode_prompt_info &> /dev/null && vi_mode_prompt_info) '
 local bg_job='%{${fg[black]}%}$(prompt_bg_job)%{${reset_color}%} '
+local reset='%{$reset_color'
 
 PROMPT=$cwd$usr$char
-RPROMPT=$vi_mode$bg_job$git$timestamp
+RPROMPT=$vi_mode$bg_job$git$timestamp$reset
 
 PROMPT2=$char
 RPROMPT2='[%_]'
