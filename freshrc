@@ -57,6 +57,13 @@ fresh hackling/morse bin/morse --bin
 
 fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles config/gitconfig --file
+
+#Add warning to git commits if I've left a binding in
+fresh twe4ked/dotfiles config/gitconfig --file
+fresh https://gist.github.com/5431107.git pre-commit --bin=~/bin/_git-pre-commit-hook
+mkdir -p ~/.git_template/hooks/
+ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
+
 fresh jasoncodes/dotfiles config/gitignore --file
 fresh jasoncodes/dotfiles shell/aliases/rbenv.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
