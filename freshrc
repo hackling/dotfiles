@@ -86,4 +86,5 @@ fresh twe4ked/dotfiles bin/fresh-convert --bin
 
 fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
 fresh zsh/zsh-history-complete-binding.zsh
+fresh jasoncodes/dotfiles bin/vol --bin
 fresh twe4ked/dotfiles bin/skype-search --bin
