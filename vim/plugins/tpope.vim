@@ -8,3 +8,5 @@ map <leader>gm :Rmodel<cr>
 
 "Change surrounds
 Bundle 'tpope/vim-surround'
+let g:surround_113 = "#{\r}"   " v
+let g:surround_35  = "#{\r}"   " #
