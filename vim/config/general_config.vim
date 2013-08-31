@@ -12,6 +12,6 @@ set hlsearch " Highlight searches by default
 set scrolloff=8 "Set point where the file scrolls
 set ignorecase
 set nowrap
-
+set ttyfast
 
 let mapleader = ","
