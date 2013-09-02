@@ -21,16 +21,16 @@ map <Leader>m :CtrlPModified<CR>
 map <Leader>d :CtrlPCurFile<CR>
 
 "Shortcuts for jumping to a path easily - Rails oriented
-map ,jm :CtrlP<CR> app/models
-map ,jc :CtrlP<CR> app/controllers
-map ,jv :CtrlP<CR> app/views
-map ,jh :CtrlP<CR> app/helpers
-map ,jl :CtrlP<CR> lib
-map ,jp :CtrlP<CR> public
-map ,js :CtrlP<CR> spec
-map ,jf :CtrlP<CR> fast_spec
-map ,jd :CtrlP<CR> db
-map ,jC :CtrlP<CR> config
-map ,jV :CtrlP<CR> vendor
-map ,jF :CtrlP<CR> factories
-map ,jT :CtrlP<CR> test
+map ,jm :CtrlP<CR>app/models/
+map ,jc :CtrlP<CR>app/controllers/
+map ,jv :CtrlP<CR>app/views/
+map ,jh :CtrlP<CR>app/helpers/
+map ,jl :CtrlP<CR>lib/
+map ,jp :CtrlP<CR>public/
+map ,js :CtrlP<CR>spec/
+map ,jf :CtrlP<CR>fast_spec/
+map ,jd :CtrlP<CR>db/
+map ,jC :CtrlP<CR>config/
+map ,jV :CtrlP<CR>vendor/
+map ,jF :CtrlP<CR>factories/
+map ,jT :CtrlP<CR>test/
