@@ -11,6 +11,7 @@
 # Vim
 fresh-options --file=~/.vimrc --marker=\"
   fresh vim/vimrc
+  fresh vim/leader.vim
   fresh 'vim/keybindings/*.vim'
   fresh 'vim/plugins/*.vim'
   fresh jasoncodes/dotfiles vim/config/tags.vim
