@@ -1,6 +1,7 @@
 alias v="vim"
 alias work="cd ~/work"
 alias envision="cd ~/work/envision"
+alias support="cd ~/work/envision-support"
 alias whatalias=" alias | grep"
 alias xx="exit"
 alias zshrc="vim ~/.dotfiles/config/zshrc"
