@@ -15,3 +15,4 @@ set nowrap
 set ttyfast
 
 let mapleader = ","
+colorscheme jellybeans

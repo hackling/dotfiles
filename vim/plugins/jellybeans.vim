@@ -1,3 +1,2 @@
-"Ennova Colourscheme of choice
+"Ennova Colorscheme of choice
 Bundle 'nanotech/jellybeans.vim'
-colorscheme jellybeans
