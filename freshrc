@@ -52,6 +52,9 @@ fresh-options
 fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles config/gitconfig --file
 
+fresh config/git/pager.gitconfig --file=~/.gitconfig
+fresh git/git contrib/diff-highlight/diff-highlight --bin
+
 #rest of my config
 
 fresh config/zshrc --file
