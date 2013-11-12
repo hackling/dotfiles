@@ -5,3 +5,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 map <leader>gc :Rcontroller<cr>
 map <leader>gm :Rmodel<cr>
+
+"Eunuch - Unix Helpers
+Bundle 'tpope/vim-eunuch'
