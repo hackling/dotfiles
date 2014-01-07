@@ -6,6 +6,7 @@ alias whatalias=" alias | grep"
 alias xx="exit"
 alias zshrc="vim ~/.dotfiles/config/zshrc"
 alias dotfiles="~/.dotfiles/"
+alias forks="~/forks/"
 alias gshw="git show"
 alias gsw="git show"
 alias editalias='vim ~/.dotfiles/config/aliases.sh'
