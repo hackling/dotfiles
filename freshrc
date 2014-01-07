@@ -19,6 +19,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh jasoncodes/dotfiles vim/config/search.vim
   fresh jasoncodes/dotfiles vim/config/bubbling.vim
   fresh jasoncodes/dotfiles vim/config/locksmith.vim
+  fresh jasoncodes/dotfiles vim/config/completion.vim
   fresh 'vim/config/*.vim'
 fresh-options
 
