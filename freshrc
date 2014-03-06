@@ -26,6 +26,7 @@ fresh-options
 # Bin
 fresh-options --bin
   fresh jasoncodes/dotfiles bin/vim-locksmith
+  fresh bin/\*
 fresh-options
 
 # Zsh
