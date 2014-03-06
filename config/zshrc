@@ -42,5 +42,5 @@ source ~/.fresh/build/shell.sh
 export LSCOLORS="Bxfxcxdxexegedabagacad"
 eval "$(rbenv init - --no-rehash)"
 export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
-export EDITOR=/usr/local/bin/vim
+export EDITOR=vim
 unsetopt correct_all
