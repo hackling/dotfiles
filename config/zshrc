@@ -37,7 +37,8 @@ plugins=(git)
 # source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+# nick...
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source ~/.fresh/build/shell.sh
 export LSCOLORS="Bxfxcxdxexegedabagacad"
 eval "$(rbenv init - --no-rehash)"
