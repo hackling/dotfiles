@@ -13,13 +13,18 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh vim/vimrc
   fresh vim/leader.vim
   fresh 'vim/keybindings/*.vim'
+  fresh twe4ked/dotfiles vim/vundle_before.vim
   fresh 'vim/plugins/*.vim'
+  fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
+  fresh twe4ked/dotfiles vim/vundle_after.vim
+
   fresh jasoncodes/dotfiles vim/config/tags.vim
   fresh jasoncodes/dotfiles vim/config/format.vim
   fresh jasoncodes/dotfiles vim/config/search.vim
   fresh jasoncodes/dotfiles vim/config/bubbling.vim
   fresh jasoncodes/dotfiles vim/config/locksmith.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
+  fresh jasoncodes/dotfiles vim/config/undo.vim
   fresh 'vim/config/*.vim'
 fresh-options
 
@@ -32,7 +37,6 @@ fresh-options
 # Zsh
 fresh-options --file=~/.zshrc --marker
   fresh twe4ked/dotfiles shell/zsh/completion.zsh
-  # fresh twe4ked/dotfiles shell/zsh/prompt.zsh
   fresh prompt.zsh
   fresh twe4ked/dotfiles shell/zsh/title.zsh
   fresh twe4ked/dotfiles shell/zsh/aliases.zsh
@@ -76,7 +80,6 @@ mkdir -p ~/.git_template/hooks/
 ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
 
 fresh jasoncodes/dotfiles config/gitignore --file
-fresh jasoncodes/dotfiles shell/aliases/rbenv.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles config/ackrc --file
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
@@ -98,3 +101,4 @@ fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
 fresh zsh/zsh-history-complete-binding.zsh
 fresh jasoncodes/dotfiles bin/vol --bin
 fresh twe4ked/dotfiles bin/skype-search --bin
+fresh zsh/direnv.zsh
