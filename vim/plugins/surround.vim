@@ -1,5 +1,7 @@
 "Change surrounds
-Bundle 'tpope/vim-repeat'
+if !has_key(g:bundle_names, 'vim-repeat')
+  Bundle 'tpope/vim-repeat'
+end
 Bundle 'tpope/vim-surround'
 let g:surround_113  = "#{\r}"   " v
 let g:surround_35   = "#{\r}"   " #
