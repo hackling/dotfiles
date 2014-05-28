@@ -72,6 +72,7 @@ mkdir -p ~/.git_template/hooks/
 ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
 
 fresh jasoncodes/dotfiles config/gitignore --file
+fresh config/gitignore --file
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles config/ackrc --file
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
