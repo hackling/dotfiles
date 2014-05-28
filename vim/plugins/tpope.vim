@@ -1,5 +1,7 @@
 "Git Blame
-Bundle 'tpope/vim-fugitive'
+if !has_key(g:bundle_names, 'vim-fugitive')
+  Bundle 'tpope/vim-fugitive'
+end
 
 "allows opening of spec files
 Bundle 'tpope/vim-rails'
