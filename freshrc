@@ -15,6 +15,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh 'vim/keybindings/*.vim'
   fresh twe4ked/dotfiles vim/vundle_before.vim
   fresh jasoncodes/dotfiles vim/config/statusline.vim
+  fresh jasoncodes/dotfiles vim/mappings/whitespace.vim
   fresh 'vim/plugins/*.vim'
   fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
   fresh twe4ked/dotfiles vim/vundle_after.vim
