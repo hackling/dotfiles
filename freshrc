@@ -18,6 +18,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh jasoncodes/dotfiles vim/mappings/whitespace.vim
   fresh 'vim/plugins/*.vim'
   fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
+  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
   fresh twe4ked/dotfiles vim/vundle_after.vim
 
   fresh jasoncodes/dotfiles vim/config/tags.vim
