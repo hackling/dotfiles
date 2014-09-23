@@ -12,4 +12,4 @@ alias gsw="git show"
 alias editalias='vim ~/.dotfiles/config/aliases.sh'
 alias vimkeys='~/.dotfiles/vim/keybindings'
 alias killrspec="pkill -fl rspec"
-alias kill="pkill -fl"
+alias killthis="pkill -fl"
