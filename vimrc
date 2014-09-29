@@ -1,6 +1,7 @@
 " Required by Vundle
 set nocompatible
 filetype off
+let mapleader = ","
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -40,7 +41,6 @@ set nowb
 set noswapfile
 
 " Bindings
-let mapleader = ","
 nnoremap <Leader>/ :noh<CR><ESC>|"                    Clear highlights
 map <Leader>sw :w<Cr>
 
@@ -69,6 +69,158 @@ map <Leader>h *<C-O>
 " Highlight word at cursor and then Ack it.
 map <Leader>H *<C-O>:AckFromSearch!<CR>
 
+
+" Clear search
+noremap <silent><Leader>/ :nohls<CR>
+
+" Yank and put system pasteboard with <Leader>y/p
+noremap <Leader>y "*y
+nnoremap <Leader>yy "*yy
+noremap <Leader>p "*p
+noremap <Leader>P "*P
+
+" Close quickfix window with a command
+map <Leader>k :ccl<CR>
+
+" Copy relative path to the system pasteboard
+nnoremap <silent><Leader>cf :let @*=expand('%')<CR>
+
+" Copy relative path and line number to the system pasteboard
+nnoremap <silent><Leader>cl :let @*=expand('%').':'.line('.')<CR>
+
+" Select all
+map <Leader>a ggVG
+
+Bundle 'nathanaelkane/vim-indent-guides'
+filetype plugin indent on     " required!
+let g:indent_guides_enable_on_vim_startup=1
+
+" Run test at current line
+nnoremap <leader>rt :wa\|:execute('!$SHELL -l -c "rspec '.expand('%').':'.line('.').'"')<cr>
+
+" fresh: jasoncodes/dotfiles vim/config/completion.vim
+Bundle 'ervandew/supertab'
+Bundle 'szw/vim-kompleter'
+let g:SuperTabDefaultCompletionType = '<C-x><C-u>' " use completion plugin
+let g:kompleter_replace_standard_mappings = 0 " keep original <C-n> and <C-p>
+let g:kompleter_case_sensitive = 3 " smartcase
+
+runtime macros/matchit.vim
+map <Leader>, <C-^>
+
+" fresh: vim/plugins/nerdtree.vim
+
+"NERD-Tree
+Bundle 'scrooloose/nerdtree'
+
+" Nerd Tree mapppings
+noremap <Leader>. :NERDTreeToggle<CR>
+noremap <Leader>n :NERDTreeFind<CR>
+
+let g:NERDTreeShowLineNumbers = 0
+let g:NERDTreeHijackNetrw     = 0
+let g:loaded_netrw            = 1 " Disable netrw
+let g:loaded_netrwPlugin      = 1 " Disable netrw
+let g:NERDTreeIgnore          = ['Icon$']
+let g:NERDTreeWinPos          = 'right'
+let g:NERDTreeMinimalUI       = 1
+let g:NERDTreeDirArrows       = 1
+
+" fresh: vim/keybindings/visualblockindent.vim
+
+" Reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+" fresh: vim/keybindings/jump_to_start_or_end_of_line.vim
+
+" Jump to start and end of line using the home row keys
+noremap H ^
+noremap L $
+
+" fresh: vim/plugins/easycommenting.vim
+
+"Keybindings
+let g:tcommentMapLeaderOp1 = '<Leader>c'
+
+" fresh: jasoncodes/dotfiles vim/config/tags.vim
+
+if !has_key(g:bundle_names, 'vim-fugitive')
+  Bundle 'tpope/vim-fugitive'
+end
+
+" dependencies:
+"   brew install ctags
+"   gem install CoffeeTags
+
+function! UpdateTags()
+  if exists('b:git_dir') && executable('ctags')
+    call system('(cd "'.b:git_dir.'/.." && [ "$(pwd)" != /usr/local ] && rm -f .git/tags.new && PATH="/usr/local/bin:$PATH" nice ctags --tag-relative -R -f .git/tags.new --exclude=.git --langmap="ruby:+.rake.builder.rjs" . && (cd .git && find .. -name "*.coffee" | if which coffeetags &> /dev/null; then xargs coffeetags -f -; else true; fi) >> .git/tags.new && sort .git/tags.new > .git/tags && rm -f .git/tags.new) &')
+  endif
+endfunction
+
+" Generate .git/tags (ctags) automatically on save
+autocmd BufWritePost * call UpdateTags()
+
+set tags+=.git/tags
+
+" fresh: jasoncodes/dotfiles vim/plugins/ctrlp.vim
+
+Bundle 'jasoncodes/ctrlp-modified.vim'
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_working_path_mode = 0 " Don't manage
+let g:ctrlp_dotfiles = 0 " Ignore all dot/hidden files
+let g:ctrlp_custom_ignore = {
+ \ 'dir': '\.git$\|\.hg$\|\.svn$\|backups$\|logs$\|tmp$\|_site$',
+ \ 'file': '',
+ \ 'link': '',
+ \ }
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10'
+
+" Kill buffers in Ctrl-P with Ctrl-@
+" https://github.com/kien/ctrlp.vim/issues/280
+let g:ctrlp_buffer_func = { 'enter': 'CtrlPEnter' }
+func! CtrlPEnter()
+  nnoremap <buffer> <silent> <C-@> :call <sid>CtrlPDeleteBuffer()<cr>
+endfunc
+func! s:CtrlPDeleteBuffer()
+  let line = getline('.')
+  let bufid = line =~ '\[\d\+\*No Name\]$' ?
+    \ str2nr(matchstr(line, '\d\+')) :
+    \ fnamemodify(line[2:], ':p')
+  exec "bd" bufid
+  exec "norm \<F5>"
+endfunc
+
+augroup ctrlp-tjump
+  autocmd VimEnter * runtime autoload/ctrlp/tjump.vim
+  autocmd VimEnter * let g:ctrlp_tjump_only_silent = 1
+  autocmd VimEnter * augroup! ctrlp-tjump
+augroup end
+
+map <Leader>t :CtrlP<CR>
+map <Leader>T :CtrlPClearAllCaches<CR>:CtrlP<CR>
+map <Leader>l :CtrlPBuffer<CR>
+map <Leader>m :CtrlPModified<CR>
+map <Leader>M :CtrlPBranch<CR>
+map <Leader>d :CtrlPCurFile<CR>
+map <silent> <C-]> :CtrlPtjump<CR>
+
+" fresh: jasoncodes/dotfiles vim/config/bubbling.vim
+
+Bundle 'matze/vim-move'
+Bundle 'AndrewRadev/sideways.vim'
+
+let g:move_map_keys = 0
+
+" Use option-J/K to bubble lines up and down
+nmap <silent> ˚ <Plug>MoveLineUp
+nmap <silent> ∆ <Plug>MoveLineDown
+vmap <silent> ˚ <Plug>MoveBlockUp
+vmap <silent> ∆ <Plug>MoveBlockDown
 " NICK
 "
 "  set nocompatible               " be iMproved
