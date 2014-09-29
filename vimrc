@@ -221,6 +221,16 @@ nmap <silent> ˚ <Plug>MoveLineUp
 nmap <silent> ∆ <Plug>MoveLineDown
 vmap <silent> ˚ <Plug>MoveBlockUp
 vmap <silent> ∆ <Plug>MoveBlockDown
+
+"allows opening of spec files
+Bundle 'tpope/vim-rails'
+
+Bundle 'bronson/vim-trailing-whitespace'
+" trim & save
+
+map <Leader>sw :FixWhitespace<CR>:up<CR>
+
+"
 " NICK
 "
 "  set nocompatible               " be iMproved
