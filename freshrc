@@ -1,104 +1,62 @@
-# freshshell.com
-#
-# Examples:
-#
-#   fresh twe4ked/dotfiles shell/functions.sh
-#   fresh jasoncodes/dotfiles aliases/rails.sh
-#   fresh jasoncodes/dotfiles config/tmux.conf --file
-#
-# See http://freshshell.com/readme for documentation.
+##### Bash
+fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile                   # Source these files from Fresh's shell.sh file it builds
+fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
+fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
-# Vim
-fresh-options --file=~/.vimrc --marker=\"
-  fresh vim/vimrc
-  fresh vim/leader.vim
-  fresh 'vim/keybindings/*.vim'
-  fresh twe4ked/dotfiles vim/vundle_before.vim
-  fresh 'vim/plugins/*.vim'
-  fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
-  fresh twe4ked/dotfiles vim/vundle_after.vim
-
-  fresh jasoncodes/dotfiles vim/config/tags.vim
-  fresh jasoncodes/dotfiles vim/config/format.vim
-  fresh jasoncodes/dotfiles vim/config/search.vim
-  fresh jasoncodes/dotfiles vim/config/bubbling.vim
-  fresh jasoncodes/dotfiles vim/config/locksmith.vim
+##### Vim
+fresh vim/base.vim --file=~/.vimrc
+fresh-options --file=~/.vimrc
+  fresh vim/config/\*.vim
+  fresh vim/keybindings/\*.vim
+  fresh vim/plugins/\*.vim
+  fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
-  fresh jasoncodes/dotfiles vim/config/undo.vim
-  fresh 'vim/config/*.vim'
+  fresh jasoncodes/dotfiles vim/config/tags.vim
+  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
+  fresh jasoncodes/dotfiles vim/config/bubbling.vim
 fresh-options
 
-# Bin
-fresh-options --bin
-  fresh jasoncodes/dotfiles bin/vim-locksmith
-  fresh bin/\*
-fresh-options
-
-# Zsh
-fresh-options --file=~/.zshrc --marker
-  fresh twe4ked/dotfiles shell/zsh/completion.zsh
-  fresh prompt.zsh
-  fresh twe4ked/dotfiles shell/zsh/title.zsh
-  fresh twe4ked/dotfiles shell/zsh/aliases.zsh
-  fresh twe4ked/dotfiles shell/zsh/zshrc
-  fresh twe4ked/dotfiles shell/zsh/keybindings.zsh
-
-  # this loads the shell files and needs to be at the bottom of the zshrc for
-  # compdef be availiable
-  fresh freshshell/fresh contrib/source-build.sh
-
-  fresh rupa/z z.sh
-  fresh sharat87/zsh-vim-mode zsh-vim-mode.plugin.zsh
-  fresh robbyrussell/oh-my-zsh lib/edit-command-line.zsh --ref=a38774c
-  fresh robbyrussell/oh-my-zsh plugins/git-flow/git-flow.plugin.zsh --ref=df30eae
-  fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
-fresh-options
-
-#Git
-fresh jasoncodes/dotfiles shell/aliases/git.sh
-fresh jasoncodes/dotfiles config/gitconfig --file
-
-fresh config/git/pager.gitconfig --file=~/.gitconfig
+##### Git
 fresh git/git contrib/diff-highlight/diff-highlight --bin
-
-#rest of my config
-
-fresh config/zshrc --file
-fresh config/aliases.sh
-fresh config/db-aliases.sh
-# fresh config/hackling.zsh-theme --file=~/.oh-my-zsh/themes/hackling-redux.zsh-theme
-
-#clean up using fresh-options
-fresh freshshell/fresh bin/fresh --bin
-
-fresh hackling/morse bin/morse --bin
-
-#Add warning to git commits if I've left a binding in
-fresh twe4ked/dotfiles config/gitconfig --file
+fresh twe4ked/dotfiles config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
 fresh https://gist.github.com/5431107.git pre-commit --bin=~/bin/_git-pre-commit-hook
 mkdir -p ~/.git_template/hooks/
 ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
 
+##### Config
+fresh config/prompt.sh                                                                  # My prompt
+fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
+fresh config/inputrc --file                                                             # TODO: Investigate
+fresh config/gitignore --file
+fresh config/git/pager.gitconfig --file=~/.gitconfig
+fresh jasoncodes/dotfiles shell/config/direnv.sh
+fresh jasoncodes/dotfiles shell/editor.sh
+fresh jasoncodes/dotfiles shell/config/chruby.sh
 fresh jasoncodes/dotfiles config/gitignore --file
-fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles config/ackrc --file
-fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh jasoncodes/dotfiles config/tmux.conf --file
-fresh jasoncodes/dotfiles bin/airport-bounce --bin
-fresh jasoncodes/dotfiles bin/adduser --bin
-fresh jasoncodes/dotfiles bin/wemux/\* --bin
-fresh jasoncodes/dotfiles bin/loop --bin
+fresh jasoncodes/dotfiles shell/config/path.sh
+fresh jasoncodes/dotfiles shell/functions/realpath.sh
+fresh jasoncodes/dotfiles shell/config/git.sh
+fresh jasoncodes/dotfiles shell/config/ls.sh
+fresh jasoncodes/dotfiles shell/config/input.sh
+fresh jasoncodes/dotfiles shell/config/history.sh
+fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#     # Add ctrl-G for Nate
 
-fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#
+##### Executables
+fresh-options --bin
+  fresh bin/\*
+  fresh hackling/morse bin/morse                                                        # Retrieve details about the build from Semaphore
+  fresh jasoncodes/dotfiles bin/airport-bounce                                          # Turn wi-fi on and off
+  fresh jasoncodes/dotfiles bin/loop                                                    # Loop over a script
+  fresh jasoncodes/dotfiles bin/adduser                                                 # Adds User Account (for wemux)
+  fresh jasoncodes/dotfiles bin/wemux/\*                                                # Wemux scripts
+  fresh freshshell/fresh bin/fresh                                                      # Fresh!
+fresh-options
 
-fresh pengwynn/dotfiles bin/gxpr --bin
-
-fresh twe4ked/dotfiles bin/heroku-remote-add --bin
-fresh twe4ked/dotfiles bin/fresh-convert --bin
-
-fresh zsh-users/zsh-history-substring-search zsh-history-substring-search.zsh
-fresh zsh/zsh-history-complete-binding.zsh
-fresh jasoncodes/dotfiles bin/vol --bin
-fresh twe4ked/dotfiles bin/skype-search --bin
-fresh zsh/direnv.zsh
+##### Aliases
+fresh config/aliases.sh
+fresh jasoncodes/dotfiles shell/aliases/git.sh
+fresh jasoncodes/dotfiles shell/aliases/rails.sh
+fresh jasoncodes/dotfiles shell/aliases/ruby.sh
