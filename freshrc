@@ -4,9 +4,16 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
 ##### Vim
-fresh-options --file=~/.vimrc --marker=\"
-  fresh vimrc
-  fresh 'vim/config/*.vim'
+fresh vim/base.vim --file=~/.vimrc
+fresh-options --file=~/.vimrc
+  fresh vim/config/\*.vim
+  fresh vim/keybindings/\*.vim
+  fresh vim/plugins/\*.vim
+  fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
+  fresh jasoncodes/dotfiles vim/config/completion.vim
+  fresh jasoncodes/dotfiles vim/config/tags.vim
+  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
+  fresh jasoncodes/dotfiles vim/config/bubbling.vim
 fresh-options
 
 ##### Git
