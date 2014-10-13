@@ -1,4 +1,5 @@
-Bundle 'bronson/vim-trailing-whitespace'
-" trim & save
+Bundle 'ntpeters/vim-better-whitespace'
+let g:strip_whitespace_on_save = 1
+let g:better_whitespace_enabled = 1
 
-map <Leader>sw :FixWhitespace<CR>:up<CR>
+map <Leader>sw :w<CR>
