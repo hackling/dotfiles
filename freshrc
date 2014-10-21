@@ -16,6 +16,7 @@ fresh-options --file=~/.vimrc
 
   fresh vim/plugins/\*.vim
   fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
+  fresh jasoncodes/dotfiles vim/plugins/unimpaired.vim
 fresh-options
 
 ##### Git
