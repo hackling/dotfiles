@@ -15,6 +15,7 @@ fresh-options --file=~/.vimrc
   fresh vim/keybindings/\*.vim
 
   fresh vim/plugins/\*.vim
+  fresh nathanaelkane/dotfiles vim/plugins/easymotion.vim
   fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
   fresh jasoncodes/dotfiles vim/plugins/unimpaired.vim
 fresh-options
