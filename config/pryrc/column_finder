@@ -1,0 +1,5 @@
+def show_columns(object, *search_terms)
+  search_terms.map { |search_term|
+    object.attributes.slice(*object.attributes.keys.grep(/#{search_term}/))
+  }.reduce({}, :merge)
+end
