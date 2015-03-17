@@ -69,3 +69,7 @@ fresh config/aliases.sh
 fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
+
+fresh_after_build() {
+  ln -sf .vimrc ~/.nvimrc
+}
