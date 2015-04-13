@@ -24,6 +24,8 @@ fresh-options --file=~/.vimrc
   fresh vim/supertab-config.vim
 fresh-options
 
+fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
+
 ##### Git
 fresh git/git contrib/diff-highlight/diff-highlight --bin
 fresh twe4ked/dotfiles config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
