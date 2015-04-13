@@ -9,6 +9,7 @@ fresh-options --file=~/.vimrc
   fresh vim/config/\*.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
+  fresh jasoncodes/dotfiles vim/config/format.vim
   fresh jasoncodes/dotfiles vim/config/search.vim
   fresh jasoncodes/dotfiles vim/config/tags.vim
   fresh jasoncodes/dotfiles vim/config/bubbling.vim
