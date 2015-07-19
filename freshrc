@@ -36,6 +36,7 @@ ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
 ##### Config
 fresh config/prompt.sh                                                                  # My prompt
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
+fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh config/gitignore --file
 fresh config/git/pager.gitconfig --file=~/.gitconfig
