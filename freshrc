@@ -38,6 +38,7 @@ fresh config/prompt.sh                                                          
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
+fresh jasoncodes/dotfiles config/inputrc --file
 fresh config/gitignore --file
 fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
