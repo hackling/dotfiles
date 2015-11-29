@@ -57,6 +57,7 @@ fresh jasoncodes/dotfiles shell/config/ls.sh
 fresh jasoncodes/dotfiles shell/config/input.sh
 fresh jasoncodes/dotfiles shell/config/history.sh
 fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#     # Add ctrl-G for Nate
+fresh config/gemrc --file
 
 ##### Executables
 fresh-options --bin
