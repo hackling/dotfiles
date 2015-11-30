@@ -28,7 +28,6 @@ fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
 ##### Git
 fresh git/git contrib/diff-highlight/diff-highlight --bin
-fresh twe4ked/dotfiles config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
 fresh https://gist.github.com/5431107.git pre-commit --bin=~/bin/_git-pre-commit-hook
 mkdir -p ~/.git_template/hooks/
 ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
@@ -40,6 +39,8 @@ fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh jasoncodes/dotfiles config/inputrc --file
 fresh config/gitignore --file
+fresh config/gitconfig.local --file                                          # Add warning to git commits if I've left a binding in
+fresh config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
 fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh jasoncodes/dotfiles shell/config/direnv.sh
