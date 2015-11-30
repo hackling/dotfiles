@@ -1,9 +1,12 @@
+echo 'Applying Karabiner Preferences'
 rm ~/Library/Preferences/org.pqrs.Karabiner.plist
 ln -s ~/.dotfiles/application-config/org.pqrs.Karabiner.plist ~/Library/Preferences/org.pqrs.Karabiner.plist
 
+echo 'Applying Divvy Preferences'
 rm ~/Library/Preferences/com.mizage.Divvy.plist
 ln -s ~/.dotfiles/application-config/com.mizage.Divvy.plist ~/Library/Preferences/com.mizage.Divvy.plist
 
+echo 'Applying iterm Preferences'
 rm ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/.dotfiles/application-config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
