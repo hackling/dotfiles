@@ -1,0 +1,11 @@
+ack
+chromedriver
+chruby
+ctags
+git
+reattach-to-user-namespace
+caskroom/cask/brew-cask
+neovim/neovim/neovim
+tmux
+tree
+elixir
