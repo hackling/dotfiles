@@ -1,1 +1,1 @@
-brew cask install $(cat ~/.dotfiles/Caskfile | grep -v "#")
+brew cask install --appdir="/Applications" $(cat ~/.dotfiles/Caskfile | grep -v "#")
