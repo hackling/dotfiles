@@ -44,7 +44,7 @@ fresh config/gitconfig --file                                          # Add war
 fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh jasoncodes/dotfiles shell/config/direnv.sh
-fresh jasoncodes/dotfiles shell/editor.sh
+fresh shell/editor.sh
 fresh jasoncodes/dotfiles shell/config/chruby.sh
 fresh jasoncodes/dotfiles config/gitignore --file
 fresh jasoncodes/dotfiles config/ackrc --file
