@@ -1,5 +1,5 @@
-alias v="nvim"
-alias vim="nvim"
+alias v="nvim -u ~/.vimrc"
+alias vim="nvim -u ~/.vimrc"
 alias whatalias=" alias | grep"
 alias xx="exit"
 alias killrspec="pkill -fl rspec"
