@@ -1,1 +1,1 @@
-Bundle 'twe4ked/vim-diff-toggle.vim'
+Bundle 'twe4ked/vim-diff-toggle'
