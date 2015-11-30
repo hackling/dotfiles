@@ -1,1 +1,1 @@
-brew install $(cat Brewfile | grep -v "#")
+brew install $(cat ~/.dotfiles/Brewfile | grep -v "#")

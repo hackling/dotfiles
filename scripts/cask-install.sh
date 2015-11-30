@@ -1,1 +1,1 @@
-brew cask install $(cat Caskfile | grep -v "#")
+brew cask install $(cat ~/.dotfiles/Caskfile | grep -v "#")
