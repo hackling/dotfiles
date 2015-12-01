@@ -9,3 +9,4 @@ neovim/neovim/neovim
 tmux
 tree
 elixir
+ruby-install
