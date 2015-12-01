@@ -10,3 +10,4 @@ tmux
 tree
 elixir
 ruby-install
+postgres
