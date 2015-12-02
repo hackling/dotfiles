@@ -81,3 +81,8 @@ fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh_after_build() {
   ln -sf .vimrc ~/.nvimrc
 }
+
+
+###### Experimental
+
+fresh sshrc.sh --file=~/.ssh/rc
