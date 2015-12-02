@@ -8,3 +8,7 @@ source /usr/local/share/chruby/auto.sh
 
 # Set system ruby
 chruby 2.2.2
+
+# Source NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
