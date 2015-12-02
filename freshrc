@@ -15,13 +15,13 @@ fresh-options --file=~/.vimrc
   fresh jasoncodes/dotfiles vim/config/bubbling.vim
 
   fresh vim/keybindings/\*.vim
-
-  fresh vim/plugins/\*.vim
   fresh jasoncodes/dotfiles vim/plugins/ruby.vim
   fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
   fresh jasoncodes/dotfiles vim/plugins/unimpaired.vim
   fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
   fresh vim/supertab-config.vim
+
+  fresh vim/plugins/\*.vim
 fresh-options
 
 fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
