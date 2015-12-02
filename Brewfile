@@ -11,3 +11,4 @@ tree
 elixir
 ruby-install
 postgres
+docker-compose
