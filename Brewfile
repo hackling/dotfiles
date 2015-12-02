@@ -12,3 +12,4 @@ elixir
 ruby-install
 postgres
 docker-compose
+nvm
