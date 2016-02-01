@@ -46,7 +46,6 @@ fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh shell/editor.sh
 fresh jasoncodes/dotfiles shell/config/chruby.sh
-fresh jasoncodes/dotfiles config/gitignore --file
 fresh jasoncodes/dotfiles config/ackrc --file
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh config/pryrc/model_helper_methods.rb --file=~/.pryrc
