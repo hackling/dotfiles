@@ -14,3 +14,4 @@ ruby-install
 postgres
 docker-compose
 nvm
+direnv
