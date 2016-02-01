@@ -44,7 +44,6 @@ fresh config/gitconfig.local --file                                          # A
 fresh config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
 fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
-fresh jasoncodes/dotfiles shell/config/direnv.sh
 fresh shell/editor.sh
 fresh jasoncodes/dotfiles shell/config/chruby.sh
 fresh jasoncodes/dotfiles config/gitignore --file
@@ -62,6 +61,7 @@ fresh jasoncodes/dotfiles shell/config/input.sh
 fresh jasoncodes/dotfiles shell/config/history.sh
 fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#     # Add ctrl-G for Nate
 fresh config/gemrc --file
+fresh config/direnv.sh
 
 ##### Executables
 fresh-options --bin
