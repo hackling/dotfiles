@@ -23,6 +23,7 @@ fresh-options --file=~/.vimrc
 
   fresh vim/plugins/\*.vim
 fresh-options
+fresh vim/finish.vim --file=~/.vimrc
 
 fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
