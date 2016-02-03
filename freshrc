@@ -6,7 +6,6 @@ fresh rupa/z z.sh                                                               
 ##### Vim
 fresh vim/base.vim --file=~/.vimrc
 fresh-options --file=~/.vimrc
-  fresh vim/config/\*.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
   fresh jasoncodes/dotfiles vim/config/format.vim
@@ -22,6 +21,7 @@ fresh-options --file=~/.vimrc
   fresh vim/supertab-config.vim
 
   fresh vim/plugins/\*.vim
+  fresh vim/config/\*.vim
 fresh-options
 fresh vim/finish.vim --file=~/.vimrc
 
