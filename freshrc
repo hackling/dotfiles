@@ -69,3 +69,14 @@ fresh config/path.sh
 fresh_after_build() {
   ln -sf .vimrc ~/.nvimrc
 }
+
+fresh 'config/*' --file
+
+if [ ! -e ~/.gitconfig.local ]; then
+    echo "Configuring local Git settings:"
+    read -p "    Enter Git Name: " username
+    git config -f ~/.gitconfig.local user.name "$username"
+    read -p "    Enter Git Email: " email
+    git config -f ~/.gitconfig.local user.email $email
+    echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
+fi
