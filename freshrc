@@ -72,6 +72,12 @@ fresh_after_build() {
 
 fresh 'config/*' --file
 
+# Git aliases
+fresh-options --file=~/.gitconfig --marker=#
+  fresh JonathonMA/dotfiles git/alias_before.gitconfig
+  fresh JonathonMA/dotfiles 'git/aliases/*'
+fresh-options
+
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
