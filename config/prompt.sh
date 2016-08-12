@@ -24,6 +24,10 @@ then
   export PS1="$PS1"'\[\033[01;30m\]$(__my_rvm_ps1)'
 fi
 
+function __display_ruby_version() {
+  ruby -v | cut -d" " -f2 | sed 's/p.*//'
+}
+
 # add user@host:path
 export PS1="$PS1\[\033[01;34m\]\w"
 
@@ -67,4 +71,4 @@ function __git_is_dirty() { git status --porcelain | grep -q .; }
 function __git_dirty() { __git_in_repo && __git_is_dirty && echo "$1"; }
 function __git_clean() { __git_in_repo && (__git_is_dirty || echo "$1"); }
 
-export PS1='\[\e[36m\]\w\[\e[0m\] $(__git_ps1 "\[\e[37m\](\[\e[0m\]")$(__git_dirty "\[\e[35m\]✗\[\e[0m\]")$(__git_clean "\[\e[32m\]✓\[\e[0m\]")$(__git_ps1 " \[\e[34m\]%s\[\e[0m\]\[\e[37m\])\[\e[0m\] ")\[\e[33m\]\$\[\e[0m\] '
+export PS1='\[\e[36m\]\w\[\e[0m\] $(__git_ps1 "\[\e[37m\](\[\e[0m\]")$(__git_dirty "\[\e[35m\]✗\[\e[0m\]")$(__git_clean "\[\e[32m\]✓\[\e[0m\]")$(__git_ps1 " \[\e[34m\]%s\[\e[0m\]\[\e[37m\])\[\e[0m\] ")\[\e[33m\]ruby $(__display_ruby_version) \$\[\e[0m\] '
