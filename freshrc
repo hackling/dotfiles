@@ -21,41 +21,35 @@ fresh-options --file=~/.vimrc
   fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
   fresh jasoncodes/dotfiles vim/plugins/unimpaired.vim
   fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
-  fresh vim/supertab-config.vim
 
   fresh vim/plugins/\*.vim
   fresh vim/config/\*.vim
 fresh-options
 fresh vim/finish.vim --file=~/.vimrc
 
-fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
-
 ##### Config
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
-fresh config/explain.sh
-fresh config/inputrc --file                                                             # TODO: Investigate
-fresh jasoncodes/dotfiles config/inputrc --file
-fresh jasoncodes/dotfiles shell/config/pager.sh
-fresh shell/editor.sh
-fresh jasoncodes/dotfiles config/ackrc --file
-fresh jasoncodes/dotfiles config/pryrc --file
-fresh config/pryrc/model_helper_methods.rb --file=~/.pryrc
-fresh jasoncodes/dotfiles config/tmux.conf --file
-fresh config/tmux.conf --file
-fresh jasoncodes/dotfiles shell/config/path.sh
-fresh jasoncodes/dotfiles shell/functions/realpath.sh
-fresh jasoncodes/dotfiles shell/config/ls.sh
-fresh jasoncodes/dotfiles shell/config/input.sh
-fresh jasoncodes/dotfiles shell/config/history.sh
-fresh nathanaelkane/dotfiles config/tmux/ctrlg.conf --file=~/.tmux.conf --marker=\#     # Add ctrl-G for Nate
-fresh config/gemrc --file
 fresh config/direnv.sh
+fresh config/explain.sh
+fresh config/gemrc --file
+fresh config/inputrc --file                                                             # TODO: Investigate
+fresh config/tmux.conf --file
+fresh jasoncodes/dotfiles config/pryrc --file
+fresh jasoncodes/dotfiles config/tmux.conf --file
+
+#Testing removing these
+# fresh jasoncodes/dotfiles shell/config/ls.sh
+# fresh jasoncodes/dotfiles config/inputrc --file # Can I remove this?
+# fresh jasoncodes/dotfiles shell/config/pager.sh
+# fresh jasoncodes/dotfiles shell/config/path.sh
+# fresh jasoncodes/dotfiles shell/functions/realpath.sh
+
+##### Shell
+fresh shell/config/vi-mode.sh
+fresh shell/config/editor.sh
 
 ##### Executables
 fresh-options --bin
-  fresh bin/\*
-  fresh hackling/morse bin/morse                                                        # Retrieve details about the build from Semaphore
-  fresh jasoncodes/dotfiles bin/airport-bounce                                          # Turn wi-fi on and off
   fresh jasoncodes/dotfiles bin/loop                                                    # Loop over a script
   fresh jasoncodes/dotfiles bin/adduser                                                 # Adds User Account (for wemux)
   fresh jasoncodes/dotfiles bin/wemux/\*                                                # Wemux scripts
@@ -65,18 +59,11 @@ fresh-options
 ##### Aliases
 fresh config/aliases.sh
 fresh jasoncodes/dotfiles shell/aliases/git.sh
-fresh jasoncodes/dotfiles shell/aliases/rails.sh
-fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh config/path.sh
 
-fresh_after_build() {
-  ln -sf .vimrc ~/.nvimrc
-}
-
-fresh 'config/*' --file
-
-# Git aliases
+# Git
 fresh-options --file=~/.gitconfig --marker=#
+  fresh config/gitconfig
   fresh JonathonMA/dotfiles git/alias_before.gitconfig
   fresh JonathonMA/dotfiles 'git/aliases/*'
 fresh-options
@@ -89,3 +76,7 @@ if [ ! -e ~/.gitconfig.local ]; then
     git config -f ~/.gitconfig.local user.email $email
     echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
 fi
+
+fresh_after_build() {
+  ln -sf .vimrc ~/.nvimrc
+}

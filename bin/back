@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ack -g -i $1 --no-color | ack -x $2
