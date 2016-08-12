@@ -37,13 +37,6 @@ fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh jasoncodes/dotfiles config/tmux.conf --file
 
-#Testing removing these
-# fresh jasoncodes/dotfiles shell/config/ls.sh
-# fresh jasoncodes/dotfiles config/inputrc --file # Can I remove this?
-# fresh jasoncodes/dotfiles shell/config/pager.sh
-# fresh jasoncodes/dotfiles shell/config/path.sh
-# fresh jasoncodes/dotfiles shell/functions/realpath.sh
-
 ##### Shell
 fresh shell/config/vi-mode.sh
 fresh shell/config/editor.sh
