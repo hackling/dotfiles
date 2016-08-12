@@ -53,7 +53,6 @@ fresh config/direnv.sh
 
 ##### Executables
 fresh-options --bin
-  fresh bin/\*
   fresh hackling/morse bin/morse                                                        # Retrieve details about the build from Semaphore
   fresh jasoncodes/dotfiles bin/airport-bounce                                          # Turn wi-fi on and off
   fresh jasoncodes/dotfiles bin/loop                                                    # Loop over a script
