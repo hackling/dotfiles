@@ -64,6 +64,7 @@ fresh-options
 
 ##### Aliases
 fresh config/aliases.sh
+fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh config/path.sh
