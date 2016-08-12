@@ -15,3 +15,4 @@ postgres
 docker-compose
 nvm
 direnv
+ansible
