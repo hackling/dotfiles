@@ -61,10 +61,9 @@ fresh config/aliases.sh
 fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh config/path.sh
 
-fresh 'config/*' --file
-
-# Git aliases
+# Git
 fresh-options --file=~/.gitconfig --marker=#
+  fresh config/gitconfig
   fresh JonathonMA/dotfiles git/alias_before.gitconfig
   fresh JonathonMA/dotfiles 'git/aliases/*'
 fresh-options
