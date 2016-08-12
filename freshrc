@@ -52,7 +52,6 @@ fresh config/direnv.sh
 
 ##### Executables
 fresh-options --bin
-  fresh jasoncodes/dotfiles bin/airport-bounce                                          # Turn wi-fi on and off
   fresh jasoncodes/dotfiles bin/loop                                                    # Loop over a script
   fresh jasoncodes/dotfiles bin/adduser                                                 # Adds User Account (for wemux)
   fresh jasoncodes/dotfiles bin/wemux/\*                                                # Wemux scripts
