@@ -3,6 +3,9 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile           
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
+fresh JonathonMA/dotfiles shell/config/mac_completion.sh
+fresh JonathonMA/dotfiles shell/config/prompt.sh
+
 ##### Vim
 fresh vim/base.vim --file=~/.vimrc
 fresh-options --file=~/.vimrc
@@ -28,7 +31,6 @@ fresh vim/finish.vim --file=~/.vimrc
 fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
 ##### Config
-fresh config/prompt.sh                                                                  # My prompt
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
