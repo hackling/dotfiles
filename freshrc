@@ -32,21 +32,21 @@ fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
 ##### Config
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
+fresh config/direnv.sh
 fresh config/explain.sh
+fresh config/gemrc --file
 fresh config/inputrc --file                                                             # TODO: Investigate
-fresh jasoncodes/dotfiles config/inputrc --file
-fresh jasoncodes/dotfiles shell/config/pager.sh
-fresh shell/editor.sh
+fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles config/ackrc --file
+fresh jasoncodes/dotfiles config/inputrc --file
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh jasoncodes/dotfiles config/tmux.conf --file
-fresh config/tmux.conf --file
+fresh jasoncodes/dotfiles shell/config/input.sh
+fresh jasoncodes/dotfiles shell/config/ls.sh
+fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh jasoncodes/dotfiles shell/config/path.sh
 fresh jasoncodes/dotfiles shell/functions/realpath.sh
-fresh jasoncodes/dotfiles shell/config/ls.sh
-fresh jasoncodes/dotfiles shell/config/input.sh
-fresh config/gemrc --file
-fresh config/direnv.sh
+fresh shell/editor.sh
 
 ##### Executables
 fresh-options --bin
