@@ -3,6 +3,7 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile           
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
+fresh JonathonMA/dotfiles shell/config/history.sh
 fresh JonathonMA/dotfiles shell/config/mac_completion.sh
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
