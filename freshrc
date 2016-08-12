@@ -27,22 +27,12 @@ fresh vim/finish.vim --file=~/.vimrc
 
 fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
-##### Git
-fresh git/git contrib/diff-highlight/diff-highlight --bin
-fresh https://gist.github.com/5431107.git pre-commit --bin=~/bin/_git-pre-commit-hook
-mkdir -p ~/.git_template/hooks/
-ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
-
 ##### Config
 fresh config/prompt.sh                                                                  # My prompt
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh jasoncodes/dotfiles config/inputrc --file
-fresh config/gitignore --file
-fresh config/gitconfig.local --file                                          # Add warning to git commits if I've left a binding in
-fresh config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
-fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh shell/editor.sh
 fresh jasoncodes/dotfiles config/ackrc --file
@@ -52,7 +42,6 @@ fresh jasoncodes/dotfiles config/tmux.conf --file
 fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles shell/config/path.sh
 fresh jasoncodes/dotfiles shell/functions/realpath.sh
-fresh jasoncodes/dotfiles shell/config/git.sh
 fresh jasoncodes/dotfiles shell/config/ls.sh
 fresh jasoncodes/dotfiles shell/config/input.sh
 fresh jasoncodes/dotfiles shell/config/history.sh
@@ -73,7 +62,6 @@ fresh-options
 
 ##### Aliases
 fresh config/aliases.sh
-fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
 fresh config/path.sh
