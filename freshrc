@@ -51,7 +51,6 @@ fresh config/pryrc/model_helper_methods.rb --file=~/.pryrc
 fresh jasoncodes/dotfiles config/tmux.conf --file
 fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles shell/config/path.sh
-fresh config/path.sh
 fresh jasoncodes/dotfiles shell/functions/realpath.sh
 fresh jasoncodes/dotfiles shell/config/git.sh
 fresh jasoncodes/dotfiles shell/config/ls.sh
@@ -77,6 +76,7 @@ fresh config/aliases.sh
 fresh jasoncodes/dotfiles shell/aliases/git.sh
 fresh jasoncodes/dotfiles shell/aliases/rails.sh
 fresh jasoncodes/dotfiles shell/aliases/ruby.sh
+fresh config/path.sh
 
 fresh_after_build() {
   ln -sf .vimrc ~/.nvimrc
