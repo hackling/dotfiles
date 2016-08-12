@@ -41,12 +41,14 @@ fresh jasoncodes/dotfiles config/ackrc --file
 fresh jasoncodes/dotfiles config/inputrc --file
 fresh jasoncodes/dotfiles config/pryrc --file
 fresh jasoncodes/dotfiles config/tmux.conf --file
-fresh jasoncodes/dotfiles shell/config/input.sh
 fresh jasoncodes/dotfiles shell/config/ls.sh
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh jasoncodes/dotfiles shell/config/path.sh
 fresh jasoncodes/dotfiles shell/functions/realpath.sh
 fresh shell/editor.sh
+
+##### Shell
+fresh shell/config/vi-mode.sh
 
 ##### Executables
 fresh-options --bin
