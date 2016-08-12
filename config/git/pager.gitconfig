@@ -1,4 +1,0 @@
-[pager]
-  log = diff-highlight | $PAGER
-  show = diff-highlight | $PAGER
-  diff = diff-highlight | $PAGER

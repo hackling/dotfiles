@@ -3,6 +3,9 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile           
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
+fresh JonathonMA/dotfiles shell/config/mac_completion.sh
+fresh JonathonMA/dotfiles shell/config/prompt.sh
+
 ##### Vim
 fresh vim/base.vim --file=~/.vimrc
 fresh-options --file=~/.vimrc
@@ -27,22 +30,11 @@ fresh vim/finish.vim --file=~/.vimrc
 
 fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
 
-##### Git
-fresh git/git contrib/diff-highlight/diff-highlight --bin
-fresh https://gist.github.com/5431107.git pre-commit --bin=~/bin/_git-pre-commit-hook
-mkdir -p ~/.git_template/hooks/
-ln -sf ~/bin/_git-pre-commit-hook ~/.git_template/hooks/pre-commit
-
 ##### Config
-fresh config/prompt.sh                                                                  # My prompt
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/explain.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh jasoncodes/dotfiles config/inputrc --file
-fresh config/gitignore --file
-fresh config/gitconfig.local --file                                          # Add warning to git commits if I've left a binding in
-fresh config/gitconfig --file                                          # Add warning to git commits if I've left a binding in
-fresh config/git/pager.gitconfig --file=~/.gitconfig
 fresh jasoncodes/dotfiles shell/config/pager.sh
 fresh shell/editor.sh
 fresh jasoncodes/dotfiles config/ackrc --file
@@ -52,7 +44,6 @@ fresh jasoncodes/dotfiles config/tmux.conf --file
 fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles shell/config/path.sh
 fresh jasoncodes/dotfiles shell/functions/realpath.sh
-fresh jasoncodes/dotfiles shell/config/git.sh
 fresh jasoncodes/dotfiles shell/config/ls.sh
 fresh jasoncodes/dotfiles shell/config/input.sh
 fresh jasoncodes/dotfiles shell/config/history.sh
@@ -81,3 +72,20 @@ fresh config/path.sh
 fresh_after_build() {
   ln -sf .vimrc ~/.nvimrc
 }
+
+fresh 'config/*' --file
+
+# Git aliases
+fresh-options --file=~/.gitconfig --marker=#
+  fresh JonathonMA/dotfiles git/alias_before.gitconfig
+  fresh JonathonMA/dotfiles 'git/aliases/*'
+fresh-options
+
+if [ ! -e ~/.gitconfig.local ]; then
+    echo "Configuring local Git settings:"
+    read -p "    Enter Git Name: " username
+    git config -f ~/.gitconfig.local user.name "$username"
+    read -p "    Enter Git Email: " email
+    git config -f ~/.gitconfig.local user.email $email
+    echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
+fi
