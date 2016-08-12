@@ -28,8 +28,6 @@ fresh-options --file=~/.vimrc
 fresh-options
 fresh vim/finish.vim --file=~/.vimrc
 
-fresh vim/config/syntax/sqlerb.vim --file=~/.vim/syntax/sqlerb.vim
-
 ##### Config
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/direnv.sh
