@@ -3,3 +3,6 @@
 
 [rebase]
 autosquash = true
+
+[git-up "rebase"]
+auto = false
