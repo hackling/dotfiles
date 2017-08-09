@@ -1,6 +1,5 @@
 the_silver_searcher
 chromedriver
-chruby
 ctags
 git
 reattach-to-user-namespace
