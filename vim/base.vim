@@ -1,5 +1,6 @@
 " Required by Vundle
 set nocompatible
+set inccommand=nosplit
 filetype off
 let mapleader = ","
 
