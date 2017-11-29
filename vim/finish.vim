@@ -1,6 +1,3 @@
-call vundle#end()
-filetype plugin indent on " Required by Vundle
-
 " Wildmenu
 set wildmenu
 set wildmode=longest,full

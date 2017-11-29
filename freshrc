@@ -8,8 +8,13 @@ fresh JonathonMA/dotfiles shell/config/mac_completion.sh
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
 ##### Vim
-fresh vim/base.vim --file=~/.vimrc
+fresh junegunn/vim-plug plug.vim --file=~/.config/nvim/autoload/plug.vim
+fresh-options --file=~/.config/nvim/init.vim --marker=\"
+
 fresh-options --file=~/.vimrc
+  fresh vim/base.vim
+  fresh nathanaelkane/dotfiles nvim/plug_begin.vim
+
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
   fresh jasoncodes/dotfiles vim/config/format.vim
@@ -24,8 +29,9 @@ fresh-options --file=~/.vimrc
 
   fresh vim/plugins/\*.vim
   fresh vim/config/\*.vim
+  fresh nathanaelkane/dotfiles nvim/plug_end.vim
+  fresh vim/finish.vim
 fresh-options
-fresh vim/finish.vim --file=~/.vimrc
 
 ##### Config
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
@@ -86,5 +92,6 @@ if [ ! -e ~/.gitconfig.local ]; then
 fi
 
 fresh_after_build() {
+  sed -i '' 's/Bundle/Plug/' ~/.fresh/build/vimrc
   ln -sf .vimrc ~/.nvimrc
 }
