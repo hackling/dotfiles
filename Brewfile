@@ -1,4 +1,4 @@
-the_silver_searcher
+bash
 chromedriver
 ctags
 git
@@ -14,3 +14,5 @@ docker-compose
 nvm
 direnv
 ansible
+ripgrep
+dockutil
