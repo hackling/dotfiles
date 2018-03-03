@@ -8,7 +8,7 @@ fresh JonathonMA/dotfiles shell/config/mac_completion.sh
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
 ##### Vim
-fresh junegunn/vim-plug plug.vim --file=~/.config/nvim/autoload/plug.vim
+fresh junegunn/vim-plug plug.vim --file=~/.vim/autoload/plug.vim
 fresh-options --file=~/.config/nvim/init.vim --marker=\"
 
 fresh-options --file=~/.vimrc
@@ -91,6 +91,5 @@ if [ ! -e ~/.gitconfig.local ]; then
 fi
 
 fresh_after_build() {
-  sed -i '' 's/Bundle/Plug/' ~/.fresh/build/vimrc
-  ln -sf .vimrc ~/.nvimrc
+  sed -i 's/Bundle/Plug/' ~/.fresh/build/vimrc
 }
