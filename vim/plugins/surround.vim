@@ -1,7 +1,5 @@
-"Change surrounds
-if match(map(copy(g:vundle#bundles), "v:val['name']"), 'vim-repeat') < 0
-  Bundle 'tpope/vim-repeat'
-end
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 let g:surround_113  = "#{\r}"   " v
 let g:surround_35   = "#{\r}"   " #
