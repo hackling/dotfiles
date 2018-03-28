@@ -81,6 +81,9 @@ fresh-options --file=~/.gitconfig --marker=#
   fresh JonathonMA/dotfiles 'git/aliases/*'
 fresh-options
 
+fresh countdown.sh
+fresh ferengi-qotd.sh
+
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
     read -p "    Enter Git Name: " username
