@@ -1,19 +1,15 @@
 ##### Bash
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile                   # Source these files from Fresh's shell.sh file it builds
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
-#fresh rupa/z z.sh                                                                       # Jump around commonly used directories
 
 #fresh asdf-vm/asdf asdf.sh
 fresh shell/capslock-esc.sh
 fresh shell/config/history.sh
 fresh shell/git-completion.bash
-#fresh JonathonMA/dotfiles shell/config/mac_completion.sh
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
 ##### Vim
 fresh junegunn/vim-plug plug.vim --file=~/.vim/autoload/plug.vim
-fresh-options --file=~/.config/nvim/init.vim --marker=\"
-
 fresh-options --file=~/.vimrc
   fresh vim/base.vim
   fresh nathanaelkane/dotfiles nvim/plug_begin.vim
@@ -21,14 +17,11 @@ fresh-options --file=~/.vimrc
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh jasoncodes/dotfiles vim/config/completion.vim
   fresh jasoncodes/dotfiles vim/config/format.vim
-  #fresh jasoncodes/dotfiles vim/config/search.vim
   fresh jasoncodes/dotfiles vim/config/bubbling.vim
 
   fresh vim/keybindings/\*.vim
   fresh jasoncodes/dotfiles vim/plugins/ruby.vim
   fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
-  fresh nathanaelkane/dotfiles vim/plugins/gitgutter.vim
-
   fresh vim/plugins/\*.vim
   fresh vim/config/\*.vim
   fresh nathanaelkane/dotfiles nvim/plug_end.vim
@@ -38,13 +31,9 @@ fresh-options
 ##### Config
 fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
 fresh config/fzf.sh
-#fresh config/direnv.sh
-#fresh config/explain.sh
 fresh config/gemrc --file
 fresh config/inputrc --file                                                             # TODO: Investigate
-#fresh config/tmux.conf --file
 fresh jasoncodes/dotfiles config/pryrc --file
-#fresh jasoncodes/dotfiles config/tmux.conf --file
 
 fresh asdf/bash.sh
 fresh asdf/asdfrc --file
@@ -53,29 +42,18 @@ fresh asdf/default-gems --file
 
 fresh config/notes.sh
 
-
-##### Ctrl/Esc - Capslock
-
-#fresh jasoncodes/dotfiles hammerspoon/control_escape.lua --file=~/.hammerspoon/init.lua
-
 ##### Shell
 fresh shell/config/vi-mode.sh
 fresh shell/config/editor.sh
 
 ##### Executables
 fresh-options --bin
-  # fresh jasoncodes/dotfiles bin/loop                                                    # Loop over a script
-  # fresh jasoncodes/dotfiles bin/adduser                                                 # Adds User Account (for wemux)
-  # fresh jasoncodes/dotfiles bin/wemux/\*                                                # Wemux scripts
   fresh freshshell/fresh bin/fresh                                                      # Fresh!
-  # fresh JonathonMA/dotfiles bin/docker-cleanup-unused.sh
 fresh-options
 
 ##### Aliases
 fresh config/aliases.sh
-# fresh config/work-aliases.sh
 fresh jasoncodes/dotfiles shell/aliases/git.sh
-#fresh config/path.sh
 
 # Git
 fresh-options --file=~/.gitconfig --marker=#
