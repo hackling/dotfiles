@@ -10,21 +10,6 @@ let g:grepper.rg.grepprg = 'rg -H --no-heading --vimgrep --smart-case'
 let g:grepper.ack = {}
 let g:grepper.ack.grepprg = 'ack -s -H --nocolor --nogroup --column'
 
-" function! ResizeGrepper()
-"   if winnr('$') > 1
-"     resize 10
-"   else
-"     resize 9001
-"   end
-" endfunction
-" autocmd User Grepper call ResizeGrepper()
-"
-" augroup grepper-patch
-"   " Enable file tab completion on the :Grepper command
-"   autocmd VimEnter * command! -nargs=* -complete=file Grepper call grepper#parse_flags(<q-args>)
-"   autocmd VimEnter * silent augroup! grepper-patch
-" augroup end
-
 " Find the next match as we type the search
 set incsearch
 " Highlight searches by default
