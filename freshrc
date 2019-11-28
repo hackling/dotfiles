@@ -46,6 +46,7 @@ fresh asdf/default-gems --file
 ##### Shell
 fresh shell/config/vi-mode.sh
 fresh shell/config/editor.sh
+fresh shell/config/history.sh
 
 ##### Executables
 fresh-options --bin
