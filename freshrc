@@ -34,8 +34,6 @@ fresh-options --file=~/.vimrc
 fresh-options
 
 ##### Config
-fresh config/ctrlr.sh                                                                   # Extra config for ctrl-R
-fresh config/fzf.sh
 fresh config/gemrc --file
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh jasoncodes/dotfiles config/pryrc --file
@@ -44,8 +42,6 @@ fresh asdf/bash.sh
 fresh asdf/asdfrc --file
 fresh asdf/tool-versions --file
 fresh asdf/default-gems --file
-
-fresh config/notes.sh
 
 ##### Shell
 fresh shell/config/vi-mode.sh
