@@ -63,6 +63,7 @@ fresh asdf/tool-versions --file
 fresh asdf/default-gems --file
 
 ##### Shell
+fresh shell/aliases.sh
 fresh shell/config/vi-mode.sh
 fresh shell/config/editor.sh
 fresh shell/config/history.sh
