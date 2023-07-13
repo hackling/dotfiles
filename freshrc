@@ -15,6 +15,7 @@ fresh JonathonMA/dotfiles shell/has_command_pre.sh
 fresh JonathonMA/dotfiles shell/config/dircolors.sh
 fresh JonathonMA/dotfiles shell/has_command_post.sh
 
+fresh shell/fzf.sh
 fresh shell/capslock-esc.sh
 fresh shell/config/history.sh
 fresh shell/git-completion.bash
