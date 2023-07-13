@@ -32,7 +32,33 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/preamble.vim
   fresh JonathonMA/dotfiles nvim/leader.vim
   fresh JonathonMA/dotfiles nvim/global.vim
-  fresh JonathonMA/dotfiles 'nvim/config/*.vim'
+
+  # fresh vim/plugins/easycommenting.vim
+  # fresh vim/plugins/file-line.vim
+  # fresh vim/plugins/indent-guides.vim
+  # fresh vim/plugins/nerdtree.vim
+  # fresh vim/plugins/rainbow-csv.vim
+  # fresh vim/plugins/search.vim
+  # fresh vim/plugins/slim.vim
+  # fresh vim/plugins/surround.vim
+  # fresh vim/plugins/tabular.vim
+  # fresh vim/plugins/vim-eunuch.vim
+  # fresh vim/plugins/vim-expand-region.vim
+
+  fresh JonathonMA/dotfiles nvim/config/case.vim
+  fresh JonathonMA/dotfiles nvim/config/cursorline.vim
+  fresh JonathonMA/dotfiles nvim/config/ffs.vim
+  fresh JonathonMA/dotfiles nvim/config/filetypes.vim
+  fresh JonathonMA/dotfiles nvim/config/fold.vim
+  # fresh JonathonMA/dotfiles nvim/config/italics.vim
+  fresh JonathonMA/dotfiles nvim/config/line_numbering.vim
+  fresh JonathonMA/dotfiles nvim/config/listchars.vim
+  fresh JonathonMA/dotfiles nvim/config/mouse.vim
+  fresh JonathonMA/dotfiles nvim/config/org.vim
+  fresh JonathonMA/dotfiles nvim/config/todo-comments.vim
+  fresh JonathonMA/dotfiles nvim/config/updatetime.vim
+  fresh JonathonMA/dotfiles nvim/config/xdg-swap.vim
+
   fresh JonathonMA/dotfiles nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh JonathonMA/dotfiles nvim/exrc.vim
@@ -46,7 +72,11 @@ fresh-options
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
   fresh JonathonMA/dotfiles nvim/packer_before.lua
   fresh JonathonMA/dotfiles nvim/packer.lua
-  fresh JonathonMA/dotfiles 'nvim/packer/*.use'
+  fresh vim/nvim/treesitter.lua
+  fresh vim/nvim/themer.lua
+  fresh vim/nvim/nvim-tree.lua
+  fresh vim/nvim/telescope.lua
+  fresh vim/plugins/easy-motion.vim
   fresh JonathonMA/dotfiles nvim/packer_after.lua
 fresh-options
 
