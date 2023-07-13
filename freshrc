@@ -33,6 +33,27 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/leader.vim
   fresh JonathonMA/dotfiles nvim/global.vim
 
+  # Things that I've noticed are missing
+  # -> Shift l to end of line
+  # -> Leader a to select all
+  # -> Leader y and Leader p to system copy and paste
+  # -> Highlight current word with leader H
+  # -> Display all instances of a highlighted word in quickfix
+  #
+  # Investigate what removing these does
+  # fresh jasoncodes/dotfiles vim/config/completion.vim
+  # fresh jasoncodes/dotfiles vim/config/format.vim
+  # fresh jasoncodes/dotfiles vim/config/bubbling.vim
+ 
+  # fresh vim/keybindings/\*.vim
+  # fresh jasoncodes/dotfiles vim/plugins/ruby.vim
+  # fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
+  # fresh vim/plugins/\*.vim
+  # fresh vim/config/\*.vim
+  # fresh nathanaelkane/dotfiles nvim/plug_end.vim
+  # fresh vim/finish.vim
+
+
   # fresh vim/plugins/easycommenting.vim
   # fresh vim/plugins/file-line.vim
   # fresh vim/plugins/indent-guides.vim
@@ -48,20 +69,20 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/config/case.vim
   fresh JonathonMA/dotfiles nvim/config/cursorline.vim
   fresh JonathonMA/dotfiles nvim/config/ffs.vim
-  fresh JonathonMA/dotfiles nvim/config/filetypes.vim
+  fresh JonathonMA/dotfiles nvim/config/filetypes.vim # Probably want to modify this one
   fresh JonathonMA/dotfiles nvim/config/fold.vim
   # fresh JonathonMA/dotfiles nvim/config/italics.vim
-  fresh JonathonMA/dotfiles nvim/config/line_numbering.vim
+  fresh JonathonMA/dotfiles nvim/config/line_numbering.vim # Remove relative number
   fresh JonathonMA/dotfiles nvim/config/listchars.vim
-  fresh JonathonMA/dotfiles nvim/config/mouse.vim
-  fresh JonathonMA/dotfiles nvim/config/org.vim
-  fresh JonathonMA/dotfiles nvim/config/todo-comments.vim
-  fresh JonathonMA/dotfiles nvim/config/updatetime.vim
+  fresh JonathonMA/dotfiles nvim/config/mouse.vim # Might want to look at the copy method here
+  # fresh JonathonMA/dotfiles nvim/config/org.vim
+  # fresh JonathonMA/dotfiles nvim/config/todo-comments.vim
+  fresh JonathonMA/dotfiles nvim/config/updatetime.vim # Might not need this
   fresh JonathonMA/dotfiles nvim/config/xdg-swap.vim
 
   fresh JonathonMA/dotfiles nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
-  fresh JonathonMA/dotfiles nvim/exrc.vim
+  fresh JonathonMA/dotfiles nvim/exrc.vim # Probably don't need this
   fresh JonathonMA/dotfiles nvim/vimscript_after.lua
 fresh-options
 
@@ -72,6 +93,7 @@ fresh-options
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
   fresh JonathonMA/dotfiles nvim/packer_before.lua
   fresh JonathonMA/dotfiles nvim/packer.lua
+  # Investigate the rest of Jon's plugins that I haven't copied
   fresh vim/nvim/treesitter.lua
   fresh vim/nvim/themer.lua
   fresh vim/nvim/nvim-tree.lua
