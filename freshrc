@@ -112,7 +112,3 @@ if [ ! -e ~/.gitconfig.local ]; then
     git config -f ~/.gitconfig.local user.email $email
     echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
 fi
-
-fresh_after_build() {
-  sed -i 's/Bundle/Plug/' ~/.fresh/build/vimrc
-}
