@@ -21,24 +21,33 @@ fresh shell/config/history.sh
 fresh shell/git-completion.bash
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
-##### Vim
-fresh junegunn/vim-plug plug.vim --file=~/.vim/autoload/plug.vim
-fresh-options --file=~/.vimrc
-  fresh vim/base.vim
-  fresh nathanaelkane/dotfiles nvim/plug_begin.vim
+# NVim
 
+[ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ] ||
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+fresh JonathonMA/dotfiles nvim/vimscript_before.lua --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --marker='"'
+  fresh JonathonMA/dotfiles nvim/preamble.vim
+  fresh JonathonMA/dotfiles nvim/leader.vim
+  fresh JonathonMA/dotfiles nvim/global.vim
+  fresh JonathonMA/dotfiles 'nvim/config/*.vim'
+  fresh JonathonMA/dotfiles nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
-  fresh jasoncodes/dotfiles vim/config/completion.vim
-  fresh jasoncodes/dotfiles vim/config/format.vim
-  fresh jasoncodes/dotfiles vim/config/bubbling.vim
+  fresh JonathonMA/dotfiles nvim/exrc.vim
+  fresh JonathonMA/dotfiles nvim/vimscript_after.lua
+fresh-options
 
-  fresh vim/keybindings/\*.vim
-  fresh jasoncodes/dotfiles vim/plugins/ruby.vim
-  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
-  fresh vim/plugins/\*.vim
-  fresh vim/config/\*.vim
-  fresh nathanaelkane/dotfiles nvim/plug_end.vim
-  fresh vim/finish.vim
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.lua --marker='--'
+  fresh JonathonMA/dotfiles nvim/init.lua
+fresh-options
+
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --marker="--"
+  fresh JonathonMA/dotfiles nvim/packer_before.lua
+  fresh JonathonMA/dotfiles nvim/packer.lua
+  fresh JonathonMA/dotfiles 'nvim/packer/*.use'
+  fresh JonathonMA/dotfiles nvim/packer_after.lua
 fresh-options
 
 ##### Config
