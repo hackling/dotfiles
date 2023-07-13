@@ -38,6 +38,7 @@ fresh-options --file=~/.vimrc
 fresh-options
 
 ##### Config
+fresh config/direnv.sh
 fresh config/gemrc --file
 fresh config/direnv.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
