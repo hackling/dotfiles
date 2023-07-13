@@ -1,0 +1,110 @@
+# vim: set ft=sh:
+
+fresh freshshell/fresh bin/fresh --bin
+for file in ~/.bash_profile ~/.bashrc; do
+  fresh shell/noninteractive.sh --file=$file
+  fresh shell/path.sh --file=$file
+  fresh shell/source-build.sh --file=$file
+done
+
+fresh-options --file=~/.bash_logout
+  fresh shell/logout/*
+fresh-options
+
+fresh 'bin/*' --bin
+fresh JonathonMA/junkscripts 'bin/*' --bin
+fresh jasoncodes/ctrlp-modified.vim lib/branch.sh --bin
+fresh jasoncodes/ctrlp-modified.vim lib/branch_modified.sh --bin
+fresh jasoncodes/ctrlp-modified.vim lib/modified.sh --bin
+
+# Shell
+fresh shell/git-completion.bash
+fresh shell/noninteractive.sh
+fresh 'shell/aliases/*'
+fresh 'shell/config/*'
+fresh chriskempson/base16-shell scripts/base16-solarized-dark.sh
+fresh rcaloras/bash-preexec bash-preexec.sh
+fresh 'shell/preexec.sh'
+
+# Config
+fresh-options --file
+  fresh 'config/*'
+  fresh jasoncodes/dotfiles config/inputrc
+fresh-options
+fresh garybernhardt/dotfiles .githelpers --file=~/.local/share/git/helpers
+fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
+fresh Kraust/base16-tmux base16.tmuxtheme --file=~/.tmux.conf
+
+mkdir -p ~/.cache/ ~/.config/ ~/.local/share/
+find $FRESH_LOCAL/xdg/config/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.config/ \;
+find $FRESH_LOCAL/xdg/share/ -maxdepth 1 -mindepth 1 -not -name .keep -exec ln -sf \{\} ~/.local/share/ \;
+
+# NVim
+
+fresh junegunn/vim-plug plug.vim --file=~/.local/share/nvim/site/autoload/plug.vim
+
+fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim --marker=\"
+  fresh nvim/leader.vim
+  fresh nvim/plug_before.vim
+  fresh nvim/plug.vim
+  #fresh 'nvim/plugins/*.vim'
+  #fresh nvim/plug_after.vim
+  #fresh nvim/global.vim
+  #fresh 'nvim/config/*.vim'
+  #fresh nvim/mappings.vim
+  fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
+
+  fresh vim/keybindings/\*.vim
+
+  fresh jasoncodes/dotfiles vim/config/completion.vim #Do I need these?
+  fresh jasoncodes/dotfiles vim/config/format.vim
+  fresh jasoncodes/dotfiles vim/plugins/ruby.vim
+  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim
+
+  fresh vim/plugins/\*.vim
+  fresh vim/config/\*.vim
+
+  fresh nvim/exrc.vim
+fresh-options
+
+# Fonts
+fresh powerline/powerline font/PowerlineSymbols.otf --file=~/.local/share/fonts/PowerlineSymbols.otf
+fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+
+# Other config
+fresh bltavares/dot-files ctags --file=~/.ctags
+
+# Gitignore
+fresh-options --file=~/.gitignore --marker=#
+  fresh github/gitignore Global/Vim.gitignore
+  fresh github/gitignore Global/macOS.gitignore
+  fresh github/gitignore Global/Tags.gitignore
+fresh-options
+
+# Git aliases
+fresh-options --file=~/.gitconfig --marker=#
+  fresh git/alias_before.gitconfig
+  fresh 'git/aliases/*'
+  fresh 'git/config/*'
+fresh-options
+
+if [ ! -e ~/.gitconfig.local ]; then
+    echo "Configuring local Git settings:"
+    read -p "    Enter Git Name: " username
+    git config -f ~/.gitconfig.local user.name "$username"
+    read -p "    Enter Git Email: " email
+    git config -f ~/.gitconfig.local user.email $email
+    echo "Configured git settings in ~/.gitconfig.local. Not stored in local .dotfiles repo."
+fi
+
+if [ ! -d ~/.local/share/asdf ]; then
+  (
+echo "Running MR"
+    cd ~/.local/share
+    mr checkout
+  )
+fi
+
+fresh_after_build() {
+  sed -i 's/Bundle/Plug/' /home/nick/.local/share/fresh/build/config-nvim-init.vim
+}

@@ -1,6 +1,10 @@
 ##### Bash
+#
+
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile                   # Source these files from Fresh's shell.sh file it builds
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
+fresh junegunn/fzf shell/key-bindings.bash
+fresh junegunn/fzf shell/completion.bash
 
 #fresh asdf-vm/asdf asdf.sh
 fresh chriskempson/base16-shell scripts/base16-solarized-dark.sh
@@ -35,6 +39,7 @@ fresh-options
 
 ##### Config
 fresh config/gemrc --file
+fresh config/direnv.sh
 fresh config/inputrc --file                                                             # TODO: Investigate
 fresh jasoncodes/dotfiles config/pryrc --file
 
@@ -63,6 +68,8 @@ fresh-options --file=~/.gitconfig --marker=#
   fresh JonathonMA/dotfiles git/alias_before.gitconfig
   fresh JonathonMA/dotfiles 'git/aliases/*'
 fresh-options
+
+fresh JonathonMA/dotfiles xdg/share/.mrconfig --file
 
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
