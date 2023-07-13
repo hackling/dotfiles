@@ -85,6 +85,24 @@ fresh-options --file=~/.gitconfig --marker=#
 fresh-options
 
 fresh JonathonMA/dotfiles xdg/share/.mrconfig --file
+fresh powerline/powerline font/PowerlineSymbols.otf --file=~/.local/share/fonts/PowerlineSymbols.otf
+fresh powerline/powerline font/10-powerline-symbols.conf --file=~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-BlackIt.otf --file=~/.local/share/fonts/SourceCodePro-BlackIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Black.otf --file=~/.local/share/fonts/SourceCodePro-Black.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-BoldIt.otf --file=~/.local/share/fonts/SourceCodePro-BoldIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Bold.otf --file=~/.local/share/fonts/SourceCodePro-Bold.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-ExtraLightIt.otf --file=~/.local/share/fonts/SourceCodePro-ExtraLightIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-ExtraLight.otf --file=~/.local/share/fonts/SourceCodePro-ExtraLight.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-It.otf --file=~/.local/share/fonts/SourceCodePro-It.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-LightIt.otf --file=~/.local/share/fonts/SourceCodePro-LightIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Light.otf --file=~/.local/share/fonts/SourceCodePro-Light.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-MediumIt.otf --file=~/.local/share/fonts/SourceCodePro-MediumIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Medium.otf --file=~/.local/share/fonts/SourceCodePro-Medium.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Regular.otf --file=~/.local/share/fonts/SourceCodePro-Regular.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-SemiboldIt.otf --file=~/.local/share/fonts/SourceCodePro-SemiboldIt.otf
+fresh adobe-fonts/source-code-pro --ref=release OTF/SourceCodePro-Semibold.otf --file=~/.local/share/fonts/SourceCodePro-Semibold.otf
+
 
 if [ ! -e ~/.gitconfig.local ]; then
     echo "Configuring local Git settings:"
