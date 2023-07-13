@@ -10,7 +10,10 @@ fresh junegunn/fzf shell/completion.bash
 fresh chriskempson/base16-shell scripts/base16-solarized-dark.sh
 fresh seebi/dircolors-solarized dircolors.ansi-dark --file=~/.dircolors
 fresh shell/config/gnu_ls.sh
+
+fresh JonathonMA/dotfiles shell/has_command_pre.sh
 fresh JonathonMA/dotfiles shell/config/dircolors.sh
+fresh JonathonMA/dotfiles shell/has_command_post.sh
 
 fresh shell/capslock-esc.sh
 fresh shell/config/history.sh
