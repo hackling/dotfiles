@@ -1,7 +1,8 @@
 ##### Bash
 #
 
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile                   # Source these files from Fresh's shell.sh file it builds
+
+
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh junegunn/fzf shell/key-bindings.bash
 fresh junegunn/fzf shell/completion.bash
@@ -56,30 +57,29 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   # - [ ] Display all instances of a highlighted word in quickfix
   # - [ ] Format for JSON
     # fresh jasoncodes/dotfiles vim/config/format.vim
-  # - [ ] Tab completion
+  # - [x] Tab completion
     # fresh vim/config/completion.vim - Rewrote this from jasoncodes, but not working. Maybe just find a new neovim libary
   # - [ ] Sort a selection
    
-  # Investigate what removing these does
-  # fresh jasoncodes/dotfiles vim/config/bubbling.vim
- 
   # Thse seem irrelevant now
   # fresh jasoncodes/dotfiles vim/plugins/ruby.vim <- Replaced by treesitter?
   # fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim <- Replaced by Telescope
+   
+  # fresh vim/plugins/nerdtree.vim <- Replaced by nvim-tree
+  # fresh vim/plugins/surround.vim # Replaced
+  # fresh vim/plugins/tabular.vim # Replaced
+  # fresh vim/plugins/vim-eunuch.vim # Replaced
+   
   # fresh nathanaelkane/dotfiles nvim/plug_end.vim
   # fresh vim/finish.vim
-  # fresh vim/plugins/nerdtree.vim <- Replaced by nvim-tree
 
   # Plugins I need to audit
-  # fresh vim/plugins/easycommenting.vim <- Still useful
+  # fresh jasoncodes/dotfiles vim/config/bubbling.vim
   # fresh vim/plugins/file-line.vim <- I think this the info down the bottom, kind of like powerline
   # fresh vim/plugins/indent-guides.vim <- I like this
   # fresh vim/plugins/rainbow-csv.vim <- Useful
   # fresh vim/plugins/search.vim <- I think this will be all my cool search stuff that I probably still want
   # fresh vim/plugins/slim.vim <- Probably for slim templating language which I don't use anymore
-  # fresh vim/plugins/surround.vim <- Useful
-  # fresh vim/plugins/tabular.vim <- I think Jon has a version
-  # fresh vim/plugins/vim-eunuch.vim <- I think Jon has a version
   # fresh vim/plugins/vim-expand-region.vim <- I can't remember what this is
 
   fresh JonathonMA/dotfiles nvim/config/case.vim
@@ -110,13 +110,36 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --ma
   fresh JonathonMA/dotfiles nvim/packer_before.lua
   fresh JonathonMA/dotfiles nvim/packer.lua
 
+  # Nick's Plugins (or stolen from Jon and tweaked)
+  fresh vim/nvim/treesitter.lua # Syntax Highlighting
+  fresh vim/nvim/themer.lua # Color Theme stuff (namely to get Jellybeans)
+  fresh vim/nvim/nvim-tree.lua # File Tree Explorer
+  fresh vim/nvim/telescope.lua # Ctrl+P replacement. For looking at files
+  fresh vim/plugins/easy-motion.vim # Move around the screen quickly
+  fresh vim/plugins/easycommenting.vim # Commenting easily
 
-  # Investigate the rest of Jon's plugins that I haven't copied
-  fresh vim/nvim/treesitter.lua
-  fresh vim/nvim/themer.lua
-  fresh vim/nvim/nvim-tree.lua
-  fresh vim/nvim/telescope.lua
-  fresh vim/plugins/easy-motion.vim
+  fresh JonathonMA/dotfiles nvim/packer/ale.lua # Code parsing etc
+  # fresh JonathonMA/dotfiles nvim/packer/base16.lua
+  # fresh JonathonMA/dotfiles nvim/packer/bufexplorer.lua
+  # fresh JonathonMA/dotfiles nvim/packer/endwise.lua # When you add an if, it adds and end
+  fresh JonathonMA/dotfiles nvim/packer/eunuch.lua # :Remove, :Delete, etc
+  fresh JonathonMA/dotfiles nvim/packer/fetch.lua # Allows you to open vim at a specific line number
+  fresh JonathonMA/dotfiles nvim/packer/git.lua # Git gutter stuff
+  fresh JonathonMA/dotfiles nvim/packer/limelight.lua # Dims unfocused codeblocks. Turns on with :Limelight
+  fresh JonathonMA/dotfiles nvim/packer/lualine.lua # Powerline replacement
+  # fresh JonathonMA/dotfiles nvim/packer/plenary.lua # Already comes in with Telescope
+  fresh JonathonMA/dotfiles nvim/packer/polyglot.lua # Tools for loads of languages
+  # fresh JonathonMA/dotfiles nvim/packer/prettier.lua # Javascript formatter stuff.
+  fresh JonathonMA/dotfiles nvim/packer/rails.lua # Rails helpers and formatting?
+  # fresh JonathonMA/dotfiles nvim/packer/renamer.lua
+  # fresh JonathonMA/dotfiles nvim/packer/rspec.lua # Rspec Tooling
+  fresh JonathonMA/dotfiles nvim/packer/ruby-heredoc-syntax.lua # Heredoc formatting
+  fresh JonathonMA/dotfiles nvim/packer/surround.lua # Easily change surronds
+  fresh JonathonMA/dotfiles nvim/packer/tabular.lua # Formatting Cucumber Tables
+  # fresh JonathonMA/dotfiles nvim/packer/titlecase.lua # Check out, title cases things
+  # fresh JonathonMA/dotfiles nvim/packer/todo-comments.lua # Highlights comments
+  # fresh JonathonMA/dotfiles nvim/packer/typography.lua # Highlights comments
+  fresh JonathonMA/dotfiles nvim/packer/unimpaired.lua # T-pope Bracket Stuff
   fresh JonathonMA/dotfiles nvim/packer_after.lua
 fresh-options
 
