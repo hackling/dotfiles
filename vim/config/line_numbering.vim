@@ -1,0 +1,2 @@
+" Line numbering
+set number
