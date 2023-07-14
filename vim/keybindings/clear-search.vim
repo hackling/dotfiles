@@ -1,4 +1,2 @@
 " Clear search
-vim.cmd([[
-  noremap <silent><Leader>/ :nohls<CR>
-]])
+noremap <silent><Leader>/ :nohls<CR>
