@@ -34,24 +34,6 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/leader.vim # Map leadering to ,
   fresh JonathonMA/dotfiles nvim/global.vim
 
-  # My personal keybindings
-  fresh vim/keybindings/clear-search.vim
-  fresh vim/keybindings/clipboard.vim
-  fresh vim/keybindings/close-quickfix.vim
-  fresh vim/keybindings/select-all.vim
-  fresh vim/keybindings/substitute.vim
-  fresh vim/keybindings/jump_to_start_or_end_of_line.vim
-  fresh vim/keybindings/visualblockindent.vim
-
-  # Personal Configuration
-  fresh vim/config/line_numbering.vim
-
-  # Audit all these
-  # fresh vim/keybindings/\*.vim
-  # fresh vim/plugins/\*.vim
-  # fresh vim/config/\*.vim
-
-
   # Things that I've noticed are missing
   # - [x] Shift l to end of line
   # - [x] Leader a to select all
@@ -64,6 +46,22 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
     # fresh vim/config/completion.vim - Rewrote this from jasoncodes, but not working. Maybe just find a new neovim libary
   # - [ ] Sort a selection
    
+  # My personal keybindings
+  fresh vim/keybindings/clear-search.vim
+  fresh vim/keybindings/clipboard.vim
+  fresh vim/keybindings/close-quickfix.vim
+  # fresh vim/keybindings/filename-to-clipboard.vim
+  fresh vim/keybindings/select-all.vim
+  fresh vim/keybindings/substitute.vim
+  fresh vim/keybindings/swap-buffer.vim
+  fresh vim/keybindings/jump_to_start_or_end_of_line.vim
+  fresh vim/keybindings/visualblockindent.vim
+
+  # Personal Configuration
+  # fresh vim/config/colorscheme.vim # Delete
+  fresh vim/config/line_numbering.vim
+  # fresh vim/config/supertab-config.vim # Delete
+
   # Thse seem irrelevant now
   # fresh jasoncodes/dotfiles vim/plugins/ruby.vim <- Replaced by treesitter?
   # fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim <- Replaced by Telescope
@@ -98,7 +96,6 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/config/updatetime.vim # Might not need this
   fresh JonathonMA/dotfiles nvim/config/xdg-swap.vim
 
-  fresh JonathonMA/dotfiles nvim/mappings.vim
   fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
   fresh JonathonMA/dotfiles nvim/exrc.vim # Probably don't need this
   fresh JonathonMA/dotfiles nvim/vimscript_after.lua
