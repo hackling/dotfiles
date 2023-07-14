@@ -76,9 +76,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
 
   # Plugins I need to audit
   # fresh jasoncodes/dotfiles vim/config/bubbling.vim
-  # fresh vim/plugins/file-line.vim <- I think this the info down the bottom, kind of like powerline
-  # fresh vim/plugins/indent-guides.vim <- I like this
-  # fresh vim/plugins/rainbow-csv.vim <- Useful
+  # fresh vim/plugins/file-line.vim # For opening vim a specific line number. Delete
   # fresh vim/plugins/search.vim <- I think this will be all my cool search stuff that I probably still want
   # fresh vim/plugins/slim.vim <- Probably for slim templating language which I don't use anymore
   # fresh vim/plugins/vim-expand-region.vim <- I can't remember what this is
@@ -116,6 +114,8 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --ma
   fresh vim/nvim/telescope.lua # Ctrl+P replacement. For looking at files
   fresh vim/plugins/easy-motion.vim # Move around the screen quickly
   fresh vim/plugins/easycommenting.vim # Commenting easily
+  fresh vim/plugins/indent-guides.vim # Indent Guides
+  # fresh vim/plugins/rainbow-csv.vim # I think Treesitter, or Polyglot obselete this
 
   fresh JonathonMA/dotfiles nvim/packer/ale.lua # Code parsing etc
   # fresh JonathonMA/dotfiles nvim/packer/base16.lua

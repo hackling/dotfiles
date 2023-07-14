@@ -1,1 +1,1 @@
-Bundle 'mechatroner/rainbow_csv'
+use 'mechatroner/rainbow_csv'
