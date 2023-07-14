@@ -31,7 +31,7 @@ fresh JonathonMA/dotfiles shell/config/prompt.sh
 fresh JonathonMA/dotfiles nvim/vimscript_before.lua --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua
 fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --marker='"'
   fresh JonathonMA/dotfiles nvim/preamble.vim
-  fresh JonathonMA/dotfiles nvim/leader.vim
+  fresh JonathonMA/dotfiles nvim/leader.vim # Map leadering to ,
   fresh JonathonMA/dotfiles nvim/global.vim
 
   # My personal keybindings
@@ -42,6 +42,9 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh vim/keybindings/substitute.vim
   fresh vim/keybindings/jump_to_start_or_end_of_line.vim
   fresh vim/keybindings/visualblockindent.vim
+
+  # Personal Configuration
+  fresh vim/config/line_numbering.vim
 
   # Audit all these
   # fresh vim/keybindings/\*.vim
@@ -82,13 +85,12 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   # fresh vim/plugins/slim.vim <- Probably for slim templating language which I don't use anymore
   # fresh vim/plugins/vim-expand-region.vim <- I can't remember what this is
 
+  # Stuff stolen from Jon. I need to audit and add comments as to what these do
   fresh JonathonMA/dotfiles nvim/config/case.vim
   fresh JonathonMA/dotfiles nvim/config/cursorline.vim
   fresh JonathonMA/dotfiles nvim/config/ffs.vim
   fresh JonathonMA/dotfiles nvim/config/filetypes.vim # Probably want to modify this one
   fresh JonathonMA/dotfiles nvim/config/fold.vim
-  # fresh JonathonMA/dotfiles nvim/config/italics.vim <- Ask Jon what this is
-  fresh vim/config/line_numbering.vim
   fresh JonathonMA/dotfiles nvim/config/listchars.vim
   fresh JonathonMA/dotfiles nvim/config/mouse.vim # Might want to look at the copy method here
   # fresh JonathonMA/dotfiles nvim/config/org.vim
