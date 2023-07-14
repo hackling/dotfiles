@@ -20,6 +20,22 @@ use {
 				    },
 			    },
 		    },
+		    live_grep = {
+			    mappings = {
+				    i = {
+					    ["<C-k>"] = require('telescope.actions').move_selection_previous,
+					    ["<C-j>"] = require('telescope.actions').move_selection_next,
+				    },
+			    },
+		    },
+		    grep_string = {
+			    mappings = {
+				    i = {
+					    ["<C-k>"] = require('telescope.actions').move_selection_previous,
+					    ["<C-j>"] = require('telescope.actions').move_selection_next,
+				    },
+			    },
+		    },
 	    }
     })
 
@@ -54,11 +70,14 @@ use {
     builtin.myorg = MakeCommandPicker('Org', 'myorg.sh')
 
     vim.cmd([[
+      nnoremap <C-p>t <cmd>Telescope find_files<cr>
       nnoremap <leader>t <cmd>Telescope find_files<cr>
       nnoremap <leader>l <cmd>Telescope buffers<cr>
       nnoremap <leader>m <cmd>Telescope git_modified<cr>
       nnoremap <leader>M <cmd>Telescope git_branch_modified<cr>
-      nnoremap <leader>; <cmd>Telescope myorg<cr>
+      nnoremap <leader>h :let @/ = '\V' . escape(expand('<cword>'), '\')<CR>:set hlsearch<CR>
+      nnoremap <leader>f <cmd>Telescope live_grep<cr>
+      map <leader>F <leader>h<cmd>Telescope grep_string<cr>
     ]])
   end,
 }
