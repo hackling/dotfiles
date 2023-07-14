@@ -33,6 +33,14 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/init_vim.lua --m
   fresh JonathonMA/dotfiles nvim/leader.vim
   fresh JonathonMA/dotfiles nvim/global.vim
 
+  # Lua-fied versions of my keybindings
+  fresh vim/keybindings/clear-search.vim
+  fresh vim/keybindings/clipboard.vim
+  fresh vim/keybindings/close-quickfix.vim
+  fresh vim/keybindings/select-all.vim
+  fresh vim/keybindings/substitute.vim
+  fresh vim/keybindings/visualblockindent.vim
+
   # Things that I've noticed are missing
   # -> Shift l to end of line
   # -> Leader a to select all
