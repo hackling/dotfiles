@@ -1,3 +1,6 @@
 I installed a hacked version of the SourceCodePro nerd font.
 I had to use a PPA for Neovim
 I had to manually install FZF
+
+(✗ topic/2023) ~/.dotfiles$ mkdir ~/.config/nvim/lua/config
+(✗ topic/2023) ~/.dotfiles$ touch ~/.config/nvim/lua/config/nvim-cmp.lua
