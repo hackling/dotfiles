@@ -1,2 +1,4 @@
 " Substitute
-map <Leader>sr <Leader>h<bar>:%s///g<left><left>
+vim.cmd([[
+  map <Leader>sr <Leader>h<bar>:%s///g<left><left>
+]])
