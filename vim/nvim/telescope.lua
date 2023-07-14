@@ -75,7 +75,7 @@ use {
       nnoremap <leader>l <cmd>Telescope buffers<cr>
       nnoremap <leader>m <cmd>Telescope git_modified<cr>
       nnoremap <leader>M <cmd>Telescope git_branch_modified<cr>
-      nnoremap <leader>h :let @/ = '\V' . escape(expand('<cword>'), '\')<CR>:set hlsearch<CR>
+      nnoremap <leader>h :let @/ = '\V' . escape(expand('<cword>'), '\')<CR>
       nnoremap <leader>f <cmd>Telescope live_grep<cr>
       map <leader>F <leader>h<cmd>Telescope grep_string<cr>
     ]])
