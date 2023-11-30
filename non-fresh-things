@@ -1,6 +1,16 @@
 I installed a hacked version of the SourceCodePro nerd font.
+  https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/SourceCodePro.zip
+  Unzip and copy to ~/.local/share/fonts to new name (using Extra Light version)
+  fc-cache -f -v
+
 I had to use a PPA for Neovim
+  sudo add-apt-repository ppa:neovim-ppa/unstable
 I had to manually install FZF
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~.fzf/install
+I had to install a clipboard thing on my Laptop
+  sudo apt install xclip
+
 
 (✗ topic/2023) ~/.dotfiles$ mkdir ~/.config/nvim/lua/config
 (✗ topic/2023) ~/.dotfiles$ touch ~/.config/nvim/lua/config/nvim-cmp.lua

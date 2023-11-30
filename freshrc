@@ -1,6 +1,7 @@
 ##### Bash
 #
 
+fresh JonathonMA/dotfiles shell/noninteractive.sh
 
 
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
@@ -125,7 +126,7 @@ fresh-options --file=${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins.lua --ma
   fresh JonathonMA/dotfiles nvim/packer/fetch.lua # Allows you to open vim at a specific line number
   # fresh JonathonMA/dotfiles nvim/packer/git.lua # Git gutter stuff
   fresh vim/nvim/git.lua # Git gutter stuff
-  fresh JonathonMA/dotfiles nvim/packer/limelight.lua # Dims unfocused codeblocks. Turns on with :Limelight
+  # fresh JonathonMA/dotfiles nvim/packer/limelight.lua # Dims unfocused codeblocks. Turns on with :Limelight
   fresh JonathonMA/dotfiles nvim/packer/lualine.lua # Powerline replacement
   # fresh JonathonMA/dotfiles nvim/packer/plenary.lua # Already comes in with Telescope
   fresh JonathonMA/dotfiles nvim/packer/polyglot.lua # Tools for loads of languages
