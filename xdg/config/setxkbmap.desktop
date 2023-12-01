@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=setxkbmap -option 'caps:ctrl_modifier'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_AU]=Rebind Ctrl Capslock
+Name=Rebind Ctrl Capslock
+Comment[en_AU]=
+Comment=

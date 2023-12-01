@@ -133,3 +133,40 @@ install_if_not_installed zlib1g-dev # Required for old ruby installs
 /home/nick/.asdf/bin/asdf plugin add nodejs 
 /home/nick/.asdf/bin/asdf plugin add ruby
 /home/nick/.asdf/bin/asdf install
+
+initialize_directory() {
+    local directory_path="$1"
+    if [ ! -d "$directory_path" ]; then
+        mkdir -p "$directory_path"
+        echo "Created $directory_path."
+    else
+        echo "$directory_path already exists."
+    fi
+}
+
+initialize_directory "$HOME/code"
+clone_repo_if_not_exists "git@github.com:hackling/mtgmate.git" "$HOME/code/mtgmate" "master"
+
+
+if command_exists heroku; then
+    echo "Heroku is already installed"
+else
+    curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+fi
+
+install_if_not_installed make
+install_if_not_installed pkg-config
+install_if_not_installed libx11-dev
+install_if_not_installed libxtst-dev
+install_if_not_installed libxi-dev
+
+
+if command_exists xcape; then
+    echo "xcape is already installed"
+else
+clone_repo_if_not_exists "git@github.com:alols/xcape.git" "$HOME/code/xcape" "master"
+    curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+    make -C ~/code/xcape
+    sudo make -C ~/code/xcape install
+fi
+install_if_not_installed fzf #This might need a custom install

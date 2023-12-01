@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xcape -e 'Caps_Lock=Escape'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_AU]=Rebind Capslock Escape
+Name=Rebind Capslock Escape
+Comment[en_AU]=
+Comment=

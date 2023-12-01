@@ -23,6 +23,10 @@ fresh shell/config/history.sh
 fresh shell/git-completion.bash
 fresh JonathonMA/dotfiles shell/config/prompt.sh
 
+mkdir -p ~/.config
+(cd "$FRESH_LOCAL"/xdg/config && find . -type d -exec mkdir -p ~/config/{} \;)
+(cd "$FRESH_LOCAL"/xdg/config && find . -type f -not -name .keep -exec ln -sf "$FRESH_LOCAL"/xdg/config/{} ~/.config/{} \;)
+
 # NVim
 
 [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ] ||
