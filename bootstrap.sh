@@ -19,7 +19,7 @@ install_if_not_installed() {
 
 install_if_not_installed git
 install_if_not_installed curl
-# sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/unstable
 install_if_not_installed neovim
 install_if_not_installed bat
 install_if_not_installed build-essential
@@ -72,21 +72,21 @@ clone_repo_if_not_exists() {
 clone_repo_if_not_exists "https://github.com/hackling/dotfiles.git" "$HOME/.dotfiles" "topic/2023" 
 clone_repo_if_not_exists "https://github.com/asdf-vm/asdf.git" "$HOME/.asdf" "v0.13.1" 
 
-# mv .bashrc .bashrc.old
-# bash -c "`curl -sL https://get.freshshell.com`"
+mv .bashrc .bashrc.old
+bash -c "`curl -sL https://get.freshshell.com`"
 
 # Function to append a line to a file if not already present
-append_line_to_file() {
-    local line="$1"
-    local file_path="$2"
-
-    if ! grep -qF "$line" "$file_path"; then
-        echo "$line" >> "$file_path"
-        echo "Line appended to $file_path."
-    else
-        echo "Line already present in $file_path."
-    fi
-}
+# append_line_to_file() {
+#     local line="$1"
+#     local file_path="$2"
+#
+#     if ! grep -qF "$line" "$file_path"; then
+#         echo "$line" >> "$file_path"
+#         echo "Line appended to $file_path."
+#     else
+#         echo "Line already present in $file_path."
+#     fi
+# }
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 # Had some issues with Treesitter. Reinstalled the bash plugin
@@ -173,9 +173,6 @@ clone_repo_if_not_exists "git@github.com:alols/xcape.git" "$HOME/code/xcape" "ma
     sudo make -C ~/code/xcape install
 fi
 
-# Investigate Wayland Compatible Option
-# sudo add-apt-repository ppa:deafmute/interception
-# install_if_not_installed interception-caps2esc
 install_if_not_installed fzf #This might need a custom install
 
 if command_exists telegram-desktop; then
@@ -223,11 +220,9 @@ else
     npm intall --global yarn
     echo "Yarn has been installed."
 fi
-source ~/.bashrc
-# (cd ~/code/mtgmate && direnv allow && sudo docker compose up -d)
-# (cd ~/code/mtgmate && sudo docker-compose up -d)
 
 # Setting up Rails Project
+# (cd ~/code/mtgmate && direnv allow && docker compose up -d)
 # gem install bundler -v '2.2.15'
 # bundle install
 # copy config/master.key
@@ -240,6 +235,8 @@ source ~/.bashrc
 # - Migrate
 # - Remove the sequence ids from the schema.rb
 # - Test Prepare
-# 
+
 ~/.dotfiles/install-source-code-pro.sh
 ~/.dotfiles/import-terminal-settings.sh
+
+source ~/.bashrc
