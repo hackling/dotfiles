@@ -161,6 +161,7 @@ install_if_not_installed libxtst-dev
 install_if_not_installed libxi-dev
 
 
+# Requires X11 not Wayland
 if command_exists xcape; then
     echo "xcape is already installed"
 else
@@ -169,4 +170,72 @@ clone_repo_if_not_exists "git@github.com:alols/xcape.git" "$HOME/code/xcape" "ma
     make -C ~/code/xcape
     sudo make -C ~/code/xcape install
 fi
+
+# Investigate Wayland Compatible Option
+# sudo add-apt-repository ppa:deafmute/interception
+# install_if_not_installed interception-caps2esc
 install_if_not_installed fzf #This might need a custom install
+
+if command_exists telegram-desktop; then
+    echo "Telegram is already installed"
+else
+    sudo snap install telegram-desktop
+fi
+
+if command_exists docker; then
+    echo "Docker is already installed"
+else
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl gnupg
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+    # Add the repository to Apt sources:
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+    # Manage Docker as non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Configure Docker to start on boot with systemd
+sudo service docker start
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+fi
+
+install_if_not_installed direnv
+install_if_not_installed postgresql
+install_if_not_installed libpq-dev # Required to build PG Gem
+
+if command_exists yarn ; then
+    echo "Yarn is already installed"
+else
+    npm intall --global yarn
+    echo "Yarn has been installed."
+fi
+source ~/.bashrc
+# (cd ~/code/mtgmate && direnv allow && sudo docker compose up -d)
+# (cd ~/code/mtgmate && sudo docker-compose up -d)
+
+# Setting up Rails Project
+# gem install bundler -v '2.2.15'
+# bundle install
+# copy config/master.key
+# run yarn
+#
+# In order to do the following, you're going to need to
+# bin/rake db:create && bin/rake db:migrate && bin/rake db:test:prepare
+# - Create
+# - Comment out the datafixes migrations
+# - Migrate
+# - Remove the sequence ids from the schema.rb
+# - Test Prepare
+# 
