@@ -239,3 +239,4 @@ source ~/.bashrc
 # - Remove the sequence ids from the schema.rb
 # - Test Prepare
 # 
+~/.dotfiles/install-source-code-pro.sh
