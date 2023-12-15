@@ -1,0 +1,8 @@
+[/]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+font='SauceCodePro Nerd Font Ultra-Light 20'
+use-system-font=false
+visible-name='Default'

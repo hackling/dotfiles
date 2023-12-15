@@ -240,3 +240,4 @@ source ~/.bashrc
 # - Test Prepare
 # 
 ~/.dotfiles/install-source-code-pro.sh
+~/.dotfiles/import-terminal-settings.sh
