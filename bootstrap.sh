@@ -88,7 +88,9 @@ append_line_to_file() {
     fi
 }
 
-# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+# Had some issues with Treesitter. Reinstalled the bash plugin
+# :TSInstall bash
 
 command_exists() {
     command -v "$1" >/dev/null 2>&1
